@@ -1,0 +1,119 @@
+import React from 'react';
+import { ProjectItem } from '../data/profile';
+import { X, Layers, AlertCircle, CheckCircle2, Wrench, BarChart3 } from 'lucide-react';
+
+interface ArchitectureModalProps {
+  project: ProjectItem | null;
+  onClose: () => void;
+}
+
+export const ArchitectureModal: React.FC<ArchitectureModalProps> = ({ project, onClose }) => {
+  if (!project) return null;
+
+  return (
+    <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-slate-950/80 backdrop-blur-md overflow-y-auto">
+      <div className="relative w-full max-w-3xl my-8 glass-card rounded-3xl p-6 sm:p-8 max-h-[90vh] overflow-y-auto border border-teal-500/30 shadow-2xl">
+        {/* Close Button */}
+        <button
+          onClick={onClose}
+          className="absolute top-6 right-6 p-2 rounded-xl bg-slate-800/80 hover:bg-slate-700 text-slate-400 hover:text-white transition-colors"
+        >
+          <X className="w-5 h-5" />
+        </button>
+
+        {/* Header */}
+        <div className="mb-6 pr-10">
+          <div className="flex items-center gap-2 mb-2">
+            <span className="px-3 py-1 rounded-full text-xs font-mono bg-teal-500/10 text-teal-300 border border-teal-500/20">
+              {project.category}
+            </span>
+            <span className="text-xs text-slate-400 font-mono">
+              {project.period}
+            </span>
+          </div>
+          <h2 className="text-2xl sm:text-3xl font-extrabold text-white">
+            {project.title}
+          </h2>
+          <p className="text-xs text-teal-400 font-mono mt-1">
+            {project.role} · {project.companyOrClient}
+          </p>
+        </div>
+
+        {/* Metrics Banner if exists */}
+        {project.metrics && (
+          <div className="mb-6 px-4 py-3 rounded-2xl bg-teal-950/50 border border-teal-500/30 text-teal-300 text-sm font-mono flex items-center gap-3">
+            <BarChart3 className="w-5 h-5 text-teal-400 shrink-0" />
+            <div>
+              <span className="font-semibold">Key Impact Metric:</span> {project.metrics}
+            </div>
+          </div>
+        )}
+
+        {/* Body Sections */}
+        <div className="space-y-6">
+          {/* Problem */}
+          <div className="p-4 rounded-2xl bg-slate-900/60 border border-slate-800">
+            <h4 className="text-xs font-mono uppercase tracking-wider text-rose-400 flex items-center gap-1.5 mb-2">
+              <AlertCircle className="w-4 h-4" /> The Problem & Context
+            </h4>
+            <p className="text-sm text-slate-300 leading-relaxed">
+              {project.problem}
+            </p>
+          </div>
+
+          {/* Solution */}
+          <div className="p-4 rounded-2xl bg-slate-900/60 border border-slate-800">
+            <h4 className="text-xs font-mono uppercase tracking-wider text-emerald-400 flex items-center gap-1.5 mb-2">
+              <CheckCircle2 className="w-4 h-4" /> Architectural Solution
+            </h4>
+            <p className="text-sm text-slate-300 leading-relaxed">
+              {project.solution}
+            </p>
+          </div>
+
+          {/* Architecture Components */}
+          <div className="p-4 rounded-2xl bg-slate-900/60 border border-slate-800">
+            <h4 className="text-xs font-mono uppercase tracking-wider text-cyan-400 flex items-center gap-1.5 mb-3">
+              <Layers className="w-4 h-4" /> Architecture & Key Layers
+            </h4>
+            <ul className="space-y-2">
+              {project.architecture.map((arch, idx) => (
+                <li key={idx} className="flex items-start gap-2 text-sm text-slate-300">
+                  <div className="w-1.5 h-1.5 rounded-full bg-cyan-400 mt-2 shrink-0"></div>
+                  <span>{arch}</span>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          {/* Tech Stack Chips */}
+          <div>
+            <h4 className="text-xs font-mono uppercase tracking-wider text-slate-400 flex items-center gap-1.5 mb-3">
+              <Wrench className="w-4 h-4" /> Technologies & Tools
+            </h4>
+            <div className="flex flex-wrap gap-2">
+              {project.techStack.map((tech, idx) => (
+                <span
+                  key={idx}
+                  className="px-3 py-1.5 rounded-xl text-xs font-mono bg-slate-800 text-slate-200 border border-slate-700"
+                >
+                  {tech}
+                </span>
+              ))}
+            </div>
+          </div>
+        </div>
+
+        {/* Modal Footer */}
+        <div className="mt-8 pt-4 border-t border-slate-800 flex justify-end">
+          <button
+            onClick={onClose}
+            className="px-5 py-2.5 rounded-xl bg-slate-800 hover:bg-slate-700 text-slate-200 font-semibold text-sm transition-all"
+          >
+            Close Case Study
+          </button>
+        </div>
+      </div>
+    </div>
+  );
+};
