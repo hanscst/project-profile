@@ -1,19 +1,26 @@
 import React, { useState } from 'react';
-import { PROFILE_DATA, ProjectItem } from '../data/profile';
-import { ArrowUpRight, CheckCircle2, Sparkles } from 'lucide-react';
+import { PROJECTS, PROJECT_CATEGORY_LABELS } from '../data/projects';
+import type { Project, ProjectCategory } from '../types/project';
+import { ArrowUpRight, Sparkles } from 'lucide-react';
 
 interface ProjectsProps {
-  onSelectProject: (project: ProjectItem) => void;
+  onSelectProject: (project: Project) => void;
 }
 
 export const Projects: React.FC<ProjectsProps> = ({ onSelectProject }) => {
   const [filter, setFilter] = useState<string>('All');
 
-  const categories = ['All', 'AI & Agents', 'Enterprise', 'Freelance'];
+  // Categories are derived from the data so adding a new project never
+  // requires touching the component (STRICT data-driven requirement).
+  const categories: string[] = [
+    'All',
+    ...Array.from(new Set(PROJECTS.map((p) => p.category))),
+  ];
 
-  const filteredProjects = filter === 'All'
-    ? PROFILE_DATA.projects
-    : PROFILE_DATA.projects.filter(p => p.category === filter);
+  const filteredProjects =
+    filter === 'All'
+      ? PROJECTS
+      : PROJECTS.filter((p) => p.category === filter);
 
   return (
     <section id="projects" className="py-24 px-4 relative">
@@ -32,7 +39,7 @@ export const Projects: React.FC<ProjectsProps> = ({ onSelectProject }) => {
             </p>
           </div>
 
-          {/* Category Filter Tabs */}
+          {/* Category Filter Tabs (derived from data) */}
           <div className="flex flex-wrap gap-2 mt-6 md:mt-0">
             {categories.map((cat) => (
               <button
@@ -44,76 +51,104 @@ export const Projects: React.FC<ProjectsProps> = ({ onSelectProject }) => {
                     : 'glass text-slate-400 hover:text-white hover:bg-slate-800'
                 }`}
               >
-                {cat}
+                {cat === 'All' ? cat : PROJECT_CATEGORY_LABELS[cat as ProjectCategory]}
               </button>
             ))}
           </div>
         </div>
 
         {/* Project Cards Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {filteredProjects.map((project) => (
-            <div
+            <article
               key={project.id}
               onClick={() => onSelectProject(project)}
-              className="glass-card rounded-2xl p-6 sm:p-7 flex flex-col justify-between cursor-pointer group transition-all"
+              onKeyDown={(e) => {
+                if (e.key === 'Enter' || e.key === ' ') {
+                  e.preventDefault();
+                  onSelectProject(project);
+                }
+              }}
+              role="button"
+              tabIndex={0}
+              data-testid={`project-card-${project.id}`}
+              className="group glass-card rounded-2xl p-6 flex flex-col cursor-pointer transition-all duration-300 hover:-translate-y-1 hover:scale-[1.02] hover:shadow-xl hover:shadow-teal-500/10 focus:outline-none focus-visible:ring-2 focus-visible:ring-teal-400"
             >
-              <div>
-                {/* Header info */}
-                <div className="flex items-center justify-between gap-2 mb-4">
-                  <span className="px-3 py-1 rounded-full text-xs font-mono bg-teal-500/10 text-teal-300 border border-teal-500/20">
-                    {project.category}
-                  </span>
-                  <span className="text-xs text-slate-400 font-mono flex items-center gap-1">
-                    {project.period}
-                  </span>
-                </div>
+              {/* Top accent */}
+              <div
+                className="h-1 w-10 rounded-full mb-4"
+                style={{ background: project.accentColor ?? '#14b8a6' }}
+              />
 
-                <h3 className="text-xl sm:text-2xl font-bold text-white group-hover:text-teal-400 transition-colors flex items-center justify-between gap-2">
-                  {project.title}
-                  <ArrowUpRight className="w-5 h-5 text-slate-500 group-hover:text-teal-400 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-all" />
-                </h3>
+              {/* Category + Period */}
+              <div className="flex items-center justify-between gap-2 mb-3">
+                <span
+                  className="px-2.5 py-1 rounded-full text-[11px] font-mono uppercase tracking-wide"
+                  style={{
+                    color: project.accentColor ?? '#2dd4bf',
+                    backgroundColor: `${project.accentColor ?? '#14b8a6'}1a`,
+                    border: `1px solid ${project.accentColor ?? '#14b8a6'}40`,
+                  }}
+                >
+                  {PROJECT_CATEGORY_LABELS[project.category]}
+                </span>
+                <span className="text-[11px] text-slate-400 font-mono">
+                  {project.period}
+                </span>
+              </div>
 
-                <p className="text-xs text-teal-400/80 font-mono mt-1 mb-3">
-                  {project.role} · {project.companyOrClient}
-                </p>
+              <h3 className="text-lg font-bold text-white group-hover:text-teal-400 transition-colors">
+                {project.title}
+              </h3>
+              <p className="text-[13px] text-slate-300 mt-1.5 leading-snug">
+                {project.subtitle}
+              </p>
 
-                <p className="text-slate-300 text-sm leading-relaxed mb-5">
-                  {project.summary}
-                </p>
+              <p className="text-[11px] text-teal-400/80 font-mono mt-3">
+                {project.role} · {project.company}
+              </p>
 
-                {/* Key Architecture Bullets */}
-                <div className="space-y-1.5 mb-6">
-                  {project.highlights.slice(0, 2).map((item, idx) => (
-                    <div key={idx} className="flex items-start gap-2 text-xs text-slate-400">
-                      <CheckCircle2 className="w-3.5 h-3.5 text-teal-400 shrink-0 mt-0.5" />
-                      <span>{item}</span>
+              <p className="text-sm text-slate-400 leading-relaxed mt-4">
+                {project.summary}
+              </p>
+
+              {/* Impact Metrics */}
+              <div className="mt-5 grid grid-cols-2 gap-2">
+                {project.impactMetrics.map((metric) => (
+                  <div
+                    key={metric.label}
+                    className="rounded-xl bg-slate-900/60 border border-slate-800 px-3 py-2"
+                  >
+                    <div className="text-base font-extrabold text-white">
+                      {metric.value}
                     </div>
-                  ))}
-                </div>
-              </div>
-
-              {/* Footer Tech Stack */}
-              <div>
-                <div className="flex flex-wrap gap-1.5 pt-4 border-t border-slate-800">
-                  {project.techStack.map((tech, idx) => (
-                    <span
-                      key={idx}
-                      className="px-2.5 py-1 rounded-lg text-[11px] font-mono bg-slate-900/80 text-slate-300 border border-slate-800"
-                    >
-                      {tech}
-                    </span>
-                  ))}
-                </div>
-
-                {project.metrics && (
-                  <div className="mt-4 px-3 py-2 rounded-xl bg-teal-950/40 border border-teal-500/20 text-teal-300 text-xs font-mono flex items-center gap-2">
-                    <span className="w-1.5 h-1.5 rounded-full bg-teal-400 animate-pulse"></span>
-                    {project.metrics}
+                    <div className="text-[10px] text-slate-500 font-mono mt-0.5 leading-tight">
+                      {metric.label}
+                    </div>
                   </div>
-                )}
+                ))}
               </div>
-            </div>
+
+              {/* Tech Stack Chips (max 5) */}
+              <div className="mt-5 flex flex-wrap gap-1.5 pt-4 border-t border-slate-800">
+                {project.techStack.slice(0, 5).map((tech) => (
+                  <span
+                    key={tech}
+                    className="px-2 py-0.5 rounded-md text-[10px] font-mono bg-slate-900/80 text-slate-400 border border-slate-800"
+                  >
+                    {tech}
+                  </span>
+                ))}
+              </div>
+
+              {/* View Case Study */}
+              <div className="mt-5 flex items-center justify-between">
+                <span className="inline-flex items-center gap-1.5 text-xs font-semibold text-teal-400">
+                  View Case Study
+                  <ArrowUpRight className="w-4 h-4 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
+                </span>
+              </div>
+            </article>
           ))}
         </div>
       </div>
