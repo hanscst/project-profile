@@ -7,10 +7,10 @@ import { Timeline } from './sections/Timeline';
 import { Skills } from './sections/Skills';
 import { Contact } from './sections/Contact';
 import { ArchitectureModal } from './sections/ArchitectureModal';
-import { ProjectItem } from './data/profile';
+import type { Project } from './types/project';
 
 export const App: React.FC = () => {
-  const [selectedProject, setSelectedProject] = useState<ProjectItem | null>(null);
+  const [selectedProject, setSelectedProject] = useState<Project | null>(null);
 
   return (
     <div className="min-h-screen bg-slate-950 text-slate-100 flex flex-col selection:bg-teal-500 selection:text-slate-950">
