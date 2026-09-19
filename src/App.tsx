@@ -1,13 +1,25 @@
-import React, { useEffect, useState } from 'react';
+import React, { Suspense, lazy, useEffect, useState } from 'react';
 import { Navbar } from './components/Navbar';
 import { Hero } from './sections/Hero';
 import { Stats } from './sections/Stats';
 import { Projects } from './sections/Projects';
-import { Timeline } from './sections/Timeline';
-import { Skills } from './sections/Skills';
-import { Contact } from './sections/Contact';
-import { CaseStudyModal } from './sections/CaseStudyModal';
 import { CASE_STUDIES } from './data/caseStudies';
+
+// Code-split below-the-fold content so it is not part of the initial bundle.
+const Timeline = lazy(() =>
+  import('./sections/Timeline').then((m) => ({ default: m.Timeline }))
+);
+const Skills = lazy(() =>
+  import('./sections/Skills').then((m) => ({ default: m.Skills }))
+);
+const Contact = lazy(() =>
+  import('./sections/Contact').then((m) => ({ default: m.Contact }))
+);
+// Code-split the case study detail view (modal + architecture diagram) so it
+// only downloads when first opened.
+const CaseStudyModal = lazy(() =>
+  import('./sections/CaseStudyModal').then((m) => ({ default: m.CaseStudyModal }))
+);
 
 /** Read the currently deep-linked case study slug from the URL hash (#/project/<slug>). */
 const slugFromHash = (): string | null => {
@@ -54,17 +66,21 @@ export const App: React.FC = () => {
         <Hero />
         <Stats />
         <Projects onSelectProject={(project) => openProject(project.id)} />
-        <Timeline />
-        <Skills />
-        <Contact />
+        <Suspense fallback={null}>
+          <Timeline />
+          <Skills />
+          <Contact />
+        </Suspense>
       </main>
 
-      <CaseStudyModal
-        caseStudy={selected}
-        onClose={closeProject}
-        onPrevious={() => navigate(-1)}
-        onNext={() => navigate(1)}
-      />
+      <Suspense fallback={null}>
+        <CaseStudyModal
+          caseStudy={selected}
+          onClose={closeProject}
+          onPrevious={() => navigate(-1)}
+          onNext={() => navigate(1)}
+        />
+      </Suspense>
     </div>
   );
 };
