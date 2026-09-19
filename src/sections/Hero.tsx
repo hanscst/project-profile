@@ -1,55 +1,113 @@
 import React from 'react';
 import { PROFILE_DATA } from '../data/profile';
-import { Terminal, ArrowRight, ShieldCheck, Bot, Layers } from 'lucide-react';
+import {
+  Terminal,
+  ArrowRight,
+  Mail,
+  MapPin,
+  Github,
+  Linkedin,
+  Layers,
+  Bot,
+  ShieldCheck,
+  Phone,
+} from 'lucide-react';
 
 export const Hero: React.FC = () => {
+  const { name, role, experience, tagline, location, availability, contact } = PROFILE_DATA;
+
+  const socialLinks = [
+    { label: 'GitHub', href: contact.github, icon: Github },
+    { label: 'LinkedIn', href: contact.linkedin, icon: Linkedin },
+    { label: 'Email', href: `mailto:${contact.email}`, icon: Mail },
+  ];
+
   return (
     <section id="hero" className="min-h-screen pt-32 pb-20 px-4 flex flex-col justify-center relative overflow-hidden">
       {/* Background ambient lighting */}
       <div className="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-teal-500/10 rounded-full blur-3xl pointer-events-none -z-10"></div>
       <div className="absolute top-1/3 left-1/4 w-[400px] h-[400px] bg-indigo-500/10 rounded-full blur-3xl pointer-events-none -z-10"></div>
 
-      <div className="max-w-5xl mx-auto w-full">
-        {/* Top badge */}
-        <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full text-xs font-mono bg-slate-900/90 border border-slate-700/60 text-slate-300 mb-6 shadow-inner">
-          <Bot className="w-3.5 h-3.5 text-teal-400" />
-          <span>Engineered via Multica x PWD x Midas Agentic Pipeline</span>
+      <div className="max-w-6xl mx-auto w-full">
+        <div className="grid grid-cols-1 lg:grid-cols-[1.5fr_1fr] gap-12 items-start">
+          {/* Left: headline + CTAs + socials */}
+          <div>
+            {/* Availability badge */}
+            <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full text-xs font-mono bg-slate-900/90 border border-slate-700/60 text-slate-300 mb-6 shadow-inner">
+              <span className={`w-2 h-2 rounded-full ${availability.available ? 'bg-green-400' : 'bg-slate-500'}`}></span>
+              <span>{availability.label}</span>
+            </div>
+
+            {/* Headline */}
+            <h1 className="text-4xl sm:text-5xl md:text-6xl font-extrabold tracking-tight text-white mb-4 leading-[1.1]">
+              {name}
+              <span className="block mt-3 text-transparent bg-clip-text bg-gradient-to-r from-teal-400 via-emerald-300 to-cyan-400 text-2xl sm:text-3xl md:text-4xl font-bold">
+                {role}
+              </span>
+            </h1>
+
+            {/* Experience + Tagline */}
+            <p className="text-base sm:text-xl text-slate-300 max-w-2xl mb-10 leading-relaxed font-light">
+              <span className="text-teal-300 font-semibold">{experience}.</span> {tagline}
+            </p>
+
+            {/* CTA buttons */}
+            <div className="flex flex-wrap gap-4 items-center mb-10">
+              <a
+                href="#projects"
+                className="px-6 py-3.5 rounded-xl bg-teal-500 hover:bg-teal-400 text-slate-950 font-bold text-sm flex items-center gap-2 shadow-lg shadow-teal-500/20 transition-all hover:gap-3"
+              >
+                View Projects <ArrowRight className="w-4 h-4" />
+              </a>
+              <a
+                href="#contact"
+                className="px-6 py-3.5 rounded-xl bg-slate-900/60 hover:bg-slate-800 text-slate-200 font-semibold text-sm flex items-center gap-2 transition-all border border-slate-700/60"
+              >
+                Contact Me <Mail className="w-4 h-4" />
+              </a>
+            </div>
+
+            {/* Social links */}
+            <div className="flex flex-wrap items-center gap-3">
+              {socialLinks.map(({ label, href, icon: Icon }) => (
+                <a
+                  key={label}
+                  href={href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-2 px-4 py-2.5 rounded-xl glass hover:bg-slate-800/80 text-slate-300 font-medium text-sm transition-all border border-slate-700/60 hover:text-white hover:border-teal-500/40"
+                >
+                  <Icon className="w-4 h-4 text-teal-400" /> {label}
+                </a>
+              ))}
+            </div>
+          </div>
+
+          {/* Right: location / contact card */}
+          <div className="glass-card rounded-2xl p-6 sm:p-8">
+            <div className="flex items-center gap-3 mb-6">
+              <div className="w-10 h-10 rounded-xl bg-teal-500/20 text-teal-400 flex items-center justify-center">
+                <MapPin className="w-5 h-5" />
+              </div>
+              <div>
+                <p className="text-xs uppercase tracking-wider text-slate-500 font-mono">Location</p>
+                <p className="text-sm sm:text-base font-semibold text-white">{location}</p>
+              </div>
+            </div>
+
+            <div className="space-y-4 text-sm">
+              <a href={`mailto:${contact.email}`} className="flex items-center gap-3 text-slate-300 hover:text-teal-400 transition-colors">
+                <Mail className="w-4 h-4 text-teal-400" /> <span className="break-all">{contact.email}</span>
+              </a>
+              <a href={`tel:${contact.phone.replace(/\s/g, '')}`} className="flex items-center gap-3 text-slate-300 hover:text-teal-400 transition-colors">
+                <Phone className="w-4 h-4 text-teal-400" /> <span>{contact.phone}</span>
+              </a>
+            </div>
+          </div>
         </div>
 
-        {/* Main Heading */}
-        <h1 className="text-4xl sm:text-6xl md:text-7xl font-extrabold tracking-tight text-white mb-6 leading-[1.1]">
-          Building <span className="text-transparent bg-clip-text bg-gradient-to-r from-teal-400 via-emerald-300 to-cyan-400">Resilient Systems</span> & Autonomous AI Platforms.
-        </h1>
-
-        {/* Subtitle / Bio */}
-        <p className="text-base sm:text-xl text-slate-300 max-w-3xl mb-10 leading-relaxed font-light">
-          Hi, I'm <strong className="text-white font-semibold">{PROFILE_DATA.name}</strong>. Over <span className="text-teal-300 font-semibold">{PROFILE_DATA.yearsOfExperience} years</span> of crafting backend architectures, high-throughput microservices, distributed cloud systems, and enterprise AI agent orchestration platforms.
-        </p>
-
-        {/* Quick Action CTAs */}
-        <div className="flex flex-wrap gap-4 items-center mb-16">
-          <a
-            href="#projects"
-            className="px-6 py-3.5 rounded-xl bg-teal-500 hover:bg-teal-400 text-slate-950 font-bold text-sm flex items-center gap-2 shadow-lg shadow-teal-500/20 transition-all hover:gap-3"
-          >
-            Explore Case Studies <ArrowRight className="w-4 h-4" />
-          </a>
-          <a
-            href="#timeline"
-            className="px-6 py-3.5 rounded-xl glass hover:bg-slate-800/80 text-slate-200 font-semibold text-sm transition-all border border-slate-700/60"
-          >
-            Career Timeline (2017 - 2026)
-          </a>
-          <a
-            href="#contact"
-            className="px-6 py-3.5 rounded-xl bg-slate-900/60 hover:bg-slate-800 text-slate-300 font-medium text-sm transition-all"
-          >
-            Get In Touch
-          </a>
-        </div>
-
-        {/* Key Highlights Grid */}
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+        {/* Key Highlights / Stats Grid */}
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mt-16">
           <div className="glass-card rounded-2xl p-4 sm:p-5 transition-all">
             <div className="flex items-center gap-3 mb-2">
               <div className="w-8 h-8 rounded-lg bg-teal-500/20 text-teal-400 flex items-center justify-center">

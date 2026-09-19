@@ -33,8 +33,21 @@ export interface SkillCategory {
 export const PROFILE_DATA = {
   name: "Hans Christian",
   title: "Senior Software Engineer",
+  role: "Senior Software Engineer",
+  experience: "8+ Years of Experience",
   yearsOfExperience: "8+",
-  tagline: "Architecting High-Throughput Distributed Systems, Scalable Cloud Backends & Autonomous AI Agent Platforms.",
+  tagline: "Senior Software Engineer with 8+ years of experience architecting high-throughput distributed systems, enterprise & GovTech platforms, and cloud-native autonomous AI agent ecosystems.",
+  location: "Jakarta, Indonesia",
+  availability: {
+    available: true,
+    label: "Open to opportunities",
+  },
+  contact: {
+    email: "hans.christian.st@gmail.com",
+    phone: "+62 853 5571 4543",
+    linkedin: "https://www.linkedin.com/in/hans-christian-saragih-08a64682",
+    github: "https://github.com/hanscst",
+  },
   bio: "Experienced Software Engineer with over 8 years of proven track record in designing, building, and maintaining high-performance distributed systems, enterprise platforms, and cutting-edge agentic AI engineering workflows. Specialized in Java, Go, TypeScript/Node.js, PostgreSQL, Kubernetes, and Cloud Infrastructures.",
   education: {
     institution: "Telkom University, Indonesia",
