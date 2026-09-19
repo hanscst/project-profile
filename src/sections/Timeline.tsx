@@ -2,9 +2,17 @@ import React from 'react';
 import { PROFILE_DATA } from '../data/profile';
 import { Briefcase, Calendar, MapPin, Building, ChevronRight } from 'lucide-react';
 
+/** Stable, data-derived id for each timeline entry (e.g. from the company name). */
+const slugify = (value: string): string =>
+  value
+    .toLowerCase()
+    .replace(/&/g, 'and')
+    .replace(/[^a-z0-9]+/g, '-')
+    .replace(/^-+|-+$/g, '');
+
 export const Timeline: React.FC = () => {
   return (
-    <section id="timeline" className="py-24 px-4 relative">
+    <section id="timeline" data-testid="career-timeline" className="py-24 px-4 relative">
       <div className="max-w-4xl mx-auto">
         <div className="text-center mb-16">
           <div className="inline-flex items-center gap-2 text-xs font-mono text-teal-400 uppercase tracking-wider mb-2">
@@ -20,7 +28,7 @@ export const Timeline: React.FC = () => {
 
         <div className="relative pl-6 sm:pl-8 border-l-2 border-slate-800 space-y-12">
           {PROFILE_DATA.experiences.map((exp, idx) => (
-            <div key={idx} className="relative group">
+            <div key={idx} data-testid={`timeline-entry-${slugify(exp.company)}`} className="relative group">
               {/* Timeline marker node */}
               <div className="absolute -left-[31px] sm:-left-[39px] top-1.5 w-4 h-4 rounded-full bg-slate-950 border-2 border-teal-400 group-hover:bg-teal-400 group-hover:scale-125 transition-all"></div>
 

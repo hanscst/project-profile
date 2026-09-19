@@ -82,6 +82,7 @@ export const CaseStudyModal: React.FC<CaseStudyModalProps> = ({
 
   return (
     <div
+      data-testid={`case-study-${caseStudy.id}`}
       className="fixed inset-0 z-50 flex items-start justify-center p-4 bg-slate-950/80 backdrop-blur-md overflow-y-auto"
       onClick={onClose}
       role="dialog"
@@ -99,6 +100,7 @@ export const CaseStudyModal: React.FC<CaseStudyModalProps> = ({
           ref={closeRef}
           onClick={onClose}
           aria-label="Close case study"
+          data-testid="case-study-close"
           className="absolute top-6 right-6 p-2 rounded-xl bg-slate-800/80 hover:bg-slate-700 text-slate-400 hover:text-white transition-colors"
         >
           <X className="w-5 h-5" />

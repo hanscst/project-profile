@@ -53,7 +53,7 @@ export const ArchitectureDiagram: React.FC<ArchitectureDiagramProps> = ({ nodes,
   };
 
   return (
-    <div className="rounded-2xl border border-slate-800 bg-slate-950/40 p-4 sm:p-6">
+    <div data-testid="case-study-arch-diagram" className="rounded-2xl border border-slate-800 bg-slate-950/40 p-4 sm:p-6">
       <svg
         viewBox={`0 0 ${width} ${height}`}
         className="w-full h-auto"

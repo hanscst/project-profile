@@ -2,9 +2,17 @@ import React from 'react';
 import { PROFILE_DATA } from '../data/profile';
 import { Cpu, Check, GraduationCap, Award } from 'lucide-react';
 
+/** Stable, data-derived id for each skill item (from the skill name). */
+const slugify = (value: string): string =>
+  value
+    .toLowerCase()
+    .replace(/&/g, 'and')
+    .replace(/[^a-z0-9]+/g, '-')
+    .replace(/^-+|-+$/g, '');
+
 export const Skills: React.FC = () => {
   return (
-    <section id="skills" className="py-24 px-4 relative">
+    <section id="skills" data-testid="tech-stack-section" className="py-24 px-4 relative">
       <div className="max-w-6xl mx-auto">
         <div className="text-center mb-16">
           <div className="inline-flex items-center gap-2 text-xs font-mono text-teal-400 uppercase tracking-wider mb-2">
@@ -30,7 +38,7 @@ export const Skills: React.FC = () => {
               </h3>
               <ul className="space-y-2.5">
                 {group.skills.map((skill, sIdx) => (
-                  <li key={sIdx} className="flex items-center gap-2.5 text-sm text-slate-300">
+                  <li key={sIdx} data-testid={`tech-item-${slugify(skill)}`} className="flex items-center gap-2.5 text-sm text-slate-300">
                     <div className="w-4 h-4 rounded-full bg-teal-500/10 text-teal-400 flex items-center justify-center shrink-0 border border-teal-500/30">
                       <Check className="w-2.5 h-2.5" />
                     </div>

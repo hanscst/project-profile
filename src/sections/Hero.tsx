@@ -23,7 +23,7 @@ export const Hero: React.FC = () => {
   ];
 
   return (
-    <section id="hero" className="min-h-screen pt-32 pb-20 px-4 flex flex-col justify-center relative overflow-hidden">
+    <section id="hero" data-testid="hero" className="min-h-screen pt-32 pb-20 px-4 flex flex-col justify-center relative overflow-hidden">
       {/* Background ambient lighting */}
       <div className="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-teal-500/10 rounded-full blur-3xl pointer-events-none -z-10"></div>
       <div className="absolute top-1/3 left-1/4 w-[400px] h-[400px] bg-indigo-500/10 rounded-full blur-3xl pointer-events-none -z-10"></div>
@@ -55,12 +55,14 @@ export const Hero: React.FC = () => {
             <div className="flex flex-wrap gap-4 items-center mb-10">
               <a
                 href="#projects"
+                data-testid="hero-cta-projects"
                 className="px-6 py-3.5 rounded-xl bg-teal-500 hover:bg-teal-400 text-slate-950 font-bold text-sm flex items-center gap-2 shadow-lg shadow-teal-500/20 transition-all hover:gap-3"
               >
                 View Projects <ArrowRight className="w-4 h-4" />
               </a>
               <a
                 href="#contact"
+                data-testid="hero-cta-contact"
                 className="px-6 py-3.5 rounded-xl bg-slate-900/60 hover:bg-slate-800 text-slate-200 font-semibold text-sm flex items-center gap-2 transition-all border border-slate-700/60"
               >
                 Contact Me <Mail className="w-4 h-4" />
