@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { Navbar } from './components/Navbar';
 import { Hero } from './sections/Hero';
+import { Stats } from './sections/Stats';
 import { Projects } from './sections/Projects';
 import { Timeline } from './sections/Timeline';
 import { Skills } from './sections/Skills';
@@ -16,6 +17,7 @@ export const App: React.FC = () => {
       <Navbar />
       <main className="flex-1">
         <Hero />
+        <Stats />
         <Projects onSelectProject={(project) => setSelectedProject(project)} />
         <Timeline />
         <Skills />
