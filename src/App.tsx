@@ -1,5 +1,6 @@
 import React, { Suspense, lazy, useEffect, useState } from 'react';
 import { Navbar } from './components/Navbar';
+import { ErrorBoundary } from './components/ErrorBoundary';
 import { Hero } from './sections/Hero';
 import { Stats } from './sections/Stats';
 import { Projects } from './sections/Projects';
@@ -66,21 +67,33 @@ export const App: React.FC = () => {
         <Hero />
         <Stats />
         <Projects onSelectProject={(project) => openProject(project.id)} />
-        <Suspense fallback={null}>
-          <Timeline />
-          <Skills />
-          <Contact />
-        </Suspense>
+        <ErrorBoundary dataTestId="timeline">
+          <Suspense fallback={null}>
+            <Timeline />
+          </Suspense>
+        </ErrorBoundary>
+        <ErrorBoundary dataTestId="skills">
+          <Suspense fallback={null}>
+            <Skills />
+          </Suspense>
+        </ErrorBoundary>
+        <ErrorBoundary dataTestId="contact">
+          <Suspense fallback={null}>
+            <Contact />
+          </Suspense>
+        </ErrorBoundary>
       </main>
 
-      <Suspense fallback={null}>
-        <CaseStudyModal
-          caseStudy={selected}
-          onClose={closeProject}
-          onPrevious={() => navigate(-1)}
-          onNext={() => navigate(1)}
-        />
-      </Suspense>
+      <ErrorBoundary dataTestId="case-study">
+        <Suspense fallback={null}>
+          <CaseStudyModal
+            caseStudy={selected}
+            onClose={closeProject}
+            onPrevious={() => navigate(-1)}
+            onNext={() => navigate(1)}
+          />
+        </Suspense>
+      </ErrorBoundary>
     </div>
   );
 };
