@@ -91,7 +91,7 @@ export const CASE_STUDIES: CaseStudy[] = [
     context: [
       'Digital agriculture ecosystem by Telkom Indonesia connecting smallholder farmers, agricultural input suppliers, enterprise offtakers, and logistics.',
       'Multi-tenant data model serving tens of thousands of active farmer profiles with thousands of daily farm transactions.',
-      'Full-time enterprise engagement, 2021 – 2024.',
+      'Full-time enterprise engagement, Jan 2019 – Feb 2020.',
     ],
     architecture: {
       nodes: [
@@ -150,7 +150,7 @@ export const CASE_STUDIES: CaseStudy[] = [
     context: [
       'B2B logistics & supply chain marketplace by Telkom Indonesia: cargo booking, truck dispatch, route tracking, and warehouse management.',
       'Event-driven microservices on Alibaba Cloud; platform traffic grew 30% without downtime.',
-      'Full-time enterprise engagement, 2020 – 2023.',
+      'Full-time enterprise engagement, Feb 2020 – Feb 2023.',
     ],
     architecture: {
       nodes: [
@@ -213,7 +213,7 @@ export const CASE_STUDIES: CaseStudy[] = [
     context: [
       'Comprehensive event management, booking, ticketing, and scheduling platform for US-based religious organizations.',
       'Staff manage events, sessions, and seating; attendees self-serve registration and check-in.',
-      'Freelance fullstack delivery for Griya Solusi Teknologi, 2024 – 2025.',
+      'Freelance fullstack delivery for Griya Solusi Teknologi, Jul 2024 – Jan 2025.',
     ],
     architecture: {
       nodes: [
