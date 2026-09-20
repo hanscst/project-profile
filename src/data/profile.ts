@@ -1,3 +1,5 @@
+import type { ExperienceEntry, ExperienceSection } from '../types/career';
+
 export interface ProjectItem {
   id: string;
   title: string;
@@ -13,16 +15,6 @@ export interface ProjectItem {
   techStack: string[];
   highlights: string[];
   metrics?: string;
-}
-
-export interface ExperienceItem {
-  period: string;
-  role: string;
-  company: string;
-  location: string;
-  type: string;
-  description: string[];
-  techStack: string[];
 }
 
 export interface SkillCategory {
@@ -75,47 +67,6 @@ export const PROFILE_DATA = {
       skills: ["Datadog", "ELK Stack", "SonarQube", "Automated E2E Testing (Midas / Playwright)"]
     }
   ] as SkillCategory[],
-  experiences: [
-    {
-      period: "2024 - Present",
-      role: "Lead Software / AI Systems Engineer",
-      company: "Telkom DPE (Custom AI Workspace)",
-      location: "Jakarta / Remote, Indonesia",
-      type: "Full-time / Enterprise",
-      description: [
-        "Architected and customized Multica multi-agent AI orchestration platform for Telkom enterprise engineering needs.",
-        "Integrated isolated PWD (Play-With-Docker) container runtimes and automated GitLab CI/CD push synchronization.",
-        "Developed MCP (Model Context Protocol) toolings and agent runtime hooks for autonomous task execution."
-      ],
-      techStack: ["Go", "TypeScript", "React", "PostgreSQL", "Docker-in-Docker", "MCP", "GitLab API"]
-    },
-    {
-      period: "July 2024 - January 2025",
-      role: "Freelance Software Engineer",
-      company: "Griya Solusi Teknologi Indonesia",
-      location: "Remote",
-      type: "Contract / Freelance",
-      description: [
-        "Developed web applications for US-based church event management and ticketing.",
-        "Built interactive web-based photobooth system with instant processing and sharing.",
-        "Engineered mobile & web applications for structured book summaries with synchronized audio TTS."
-      ],
-      techStack: ["Java", "PostgreSQL", "Azure Cloud", "AdminJS", "MongoDB", "MinIO", "TTS", "Railway"]
-    },
-    {
-      period: "2020 - 2024",
-      role: "Software Engineer / Tech Lead",
-      company: "Telkom Indonesia (Agree & Logee Ecosystems)",
-      location: "Bandung / Jakarta, Indonesia",
-      type: "Full-time / Enterprise",
-      description: [
-        "Engineered backend microservices and APIs for Agree (Agriculture Ecosystem) connecting farmers and offtakers.",
-        "Developed high-throughput logistics and freight supply chain backend systems for Logee.",
-        "Optimized complex PostgreSQL databases, message brokers (Kafka/RabbitMQ), and Redis caching layers."
-      ],
-      techStack: ["Java", "Go", "PostgreSQL", "Kafka", "Redis", "Docker", "Kubernetes", "Alibaba Cloud"]
-    }
-  ] as ExperienceItem[],
   projects: [
     {
       id: "telkom-multica",
@@ -260,3 +211,174 @@ export const PROFILE_DATA = {
     }
   ] as ProjectItem[]
 };
+
+/**
+ * Experience data — single source of truth for the Career / Experience UI.
+ * Three separate typed collections matching the CV structure:
+ * company / project / freelance. The Timeline section renders exactly these
+ * collections, grouped by EXPERIENCE_SECTIONS, so there is no duplicated or
+ * unsynced date data.
+ */
+export const companyExperience: ExperienceEntry[] = [
+  {
+    id: 'telkom',
+    name: 'PT Telkom Indonesia',
+    role: 'Software Engineer',
+    period: 'Aug 2018 – Present',
+    start: '2018-08',
+    end: 'present',
+    type: 'fulltime',
+    location: 'Jakarta, Indonesia',
+    summary:
+      'Eight-year engineering tenure at Telkom spanning enterprise platforms, GovTech systems, and developer enablement — from Agree and Logee to Pijar Kampus, internal developer leadership, and the GovTech SPSE platform.',
+    highlights: [
+      'Grew from backend engineer to senior engineer, chapter lead, and product-team lead',
+      'Shipped high-throughput enterprise & GovTech platforms serving thousands of daily transactions',
+      'Drove engineering standards, developer community, and technical mentorship across teams',
+    ],
+    techStack: ['Java', 'Go', 'TypeScript', 'PostgreSQL', 'Kafka', 'Kubernetes'],
+  },
+];
+
+export const projectExperience: ExperienceEntry[] = [
+  {
+    id: 'telkom-multica',
+    name: 'Multica Project',
+    role: 'Lead Backend / AI Systems Engineer',
+    period: 'Aug 2026 – Present',
+    start: '2026-08',
+    end: 'present',
+    summary:
+      'Architected and customized Multica, a multi-agent AI orchestration workspace, for Telkom enterprise engineering teams.',
+    highlights: [
+      'Integrated isolated Docker-in-Docker runtimes and GitLab CI/CD push synchronization',
+      'Developed MCP tooling and agent runtime hooks for autonomous task execution',
+      'Reduced feature turnaround time by ~60% with agentic workflows',
+    ],
+    techStack: ['Go', 'TypeScript', 'React', 'PostgreSQL', 'Docker-in-Docker', 'MCP'],
+  },
+  {
+    id: 'telkom-govtech-spse',
+    name: 'GovTech Procurement (SPSE)',
+    role: 'Software Engineer',
+    period: 'Oct 2025 – Jul 2026',
+    start: '2025-10',
+    end: '2026-07',
+    summary:
+      'Engineered backend services and APIs for Telkom’s GovTech procurement platform (SPSE), supporting public-sector procurement workflows.',
+    highlights: [
+      'Built and maintained backend services for the government procurement platform',
+      'Improved API reliability and performance for high-volume procurement transactions',
+    ],
+    techStack: ['Java', 'Go', 'PostgreSQL'],
+  },
+  {
+    id: 'telkom-eadds',
+    name: 'EADDS',
+    role: 'Software Engineer',
+    period: 'Feb 2025 – Oct 2025',
+    start: '2025-02',
+    end: '2025-10',
+    summary:
+      'Engineered enterprise application and data-delivery systems for Telkom’s internal platforms.',
+    highlights: [
+      'Built and maintained backend services for internal enterprise systems',
+    ],
+    techStack: ['Java', 'Go', 'PostgreSQL'],
+  },
+  {
+    id: 'telkom-pijar-kampus',
+    name: 'Pijar Kampus',
+    role: 'Software Engineer',
+    period: 'Feb 2024 – Feb 2025',
+    start: '2024-02',
+    end: '2025-02',
+    summary:
+      'Developed features for Pijar Kampus, Telkom’s education-technology platform serving students and institutions.',
+    highlights: [
+      'Built and maintained backend services and APIs for the edtech platform',
+      'Improved performance and reliability of high-traffic learning flows',
+    ],
+    techStack: ['Java', 'Go', 'PostgreSQL'],
+  },
+  {
+    id: 'telkom-chapter-developer',
+    name: 'Chapter Developer',
+    role: 'Chapter Developer',
+    period: 'Feb 2023 – Feb 2024',
+    start: '2023-02',
+    end: '2024-02',
+    summary:
+      'Led the developer chapter — enabling engineering teams through shared standards, tooling, and community.',
+    highlights: [
+      'Standardized backend practices, coding standards, and delivery workflows',
+      'Mentored engineers and ran developer community initiatives',
+    ],
+    techStack: ['Engineering Enablement', 'Mentorship', 'Standards'],
+  },
+  {
+    id: 'telkom-logee',
+    name: 'LOGEE',
+    role: 'Backend Engineer',
+    period: 'Feb 2020 – Feb 2023',
+    start: '2020-02',
+    end: '2023-02',
+    summary:
+      'Delivered Logee, Telkom’s B2B logistics and supply-chain marketplace for cargo booking, truck dispatch, and live tracking.',
+    highlights: [
+      'Built event-driven microservices with Kafka and distributed Redis locks',
+      'Optimized PostgreSQL for sub-100ms high-volume order lookups',
+      'Orchestrated 50k+ shipments across Indonesia on Kubernetes',
+    ],
+    techStack: ['Java', 'Go', 'PostgreSQL', 'Kafka', 'Redis', 'Kubernetes'],
+  },
+  {
+    id: 'telkom-agree',
+    name: 'AGREE',
+    role: 'Senior Backend Engineer',
+    period: 'Jan 2019 – Feb 2020',
+    start: '2019-01',
+    end: '2020-02',
+    summary:
+      'Built the Agree digital agriculture ecosystem connecting smallholder farmers, financial institutions, and enterprise offtakers.',
+    highlights: [
+      'Engineered scalable RESTful microservices with multi-tenant data schemas',
+      'Integrated third-party logistics and payment gateways',
+      'Scaled to tens of thousands of active farmer profiles',
+    ],
+    techStack: ['Java', 'Spring Boot', 'Go', 'PostgreSQL', 'Redis'],
+  },
+];
+
+export const freelanceExperience: ExperienceEntry[] = [
+  {
+    id: 'griya',
+    name: 'Griya Solusi Teknologi Indonesia',
+    role: 'Freelance Software Engineer',
+    period: 'Jul 2024 – Jan 2025',
+    start: '2024-07',
+    end: '2025-01',
+    type: 'freelance',
+    location: 'Remote',
+    summary:
+      'Freelance engineering across three client projects — US Church Event App, Web Photobooth, and Book Summary Audio App.',
+    highlights: [
+      'US Church Event App — event management, seat reservation, and attendee engagement',
+      'Web Photobooth — zero-install browser capture with instant sharing',
+      'Book Summary Audio App — micro-learning platform with AI-synthesized audio',
+      'Delivered fullstack solutions end-to-end, from backend services to browser UIs',
+    ],
+    techStack: ['Java', 'JavaScript', 'Node.js', 'PostgreSQL', 'MongoDB', 'MinIO'],
+  },
+];
+
+/**
+ * Named groups rendered by the Career section. Titles live here (not in the
+ * component) so headings stay data-driven: adding a new category is a data
+ * change, not a UI change.
+ */
+export const EXPERIENCE_SECTIONS: ExperienceSection[] = [
+  { id: 'company', title: 'Company Experience', entries: companyExperience },
+  { id: 'project', title: 'Project Experience', entries: projectExperience },
+  { id: 'freelance', title: 'Freelance Experience', entries: freelanceExperience },
+];
