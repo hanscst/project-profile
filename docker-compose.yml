@@ -1,0 +1,10 @@
+services:
+  portfolio-web:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: portfolio-web:latest
+    container_name: portfolio-web
+    restart: unless-stopped
+    ports:
+      - "3000:80"
