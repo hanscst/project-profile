@@ -27,7 +27,7 @@ export const CASE_STUDIES: CaseStudy[] = [
     ],
     context: [
       'Customized Multica platform as AI workspace for Telkom Indonesia.',
-      'Full-time enterprise engagement, Jakarta / remote, Aug 2026 – present.',
+      'Full-time enterprise engagement, Jakarta / remote, Aug 2026 – Oct 2026.',
     ],
     architecture: {
       nodes: [
