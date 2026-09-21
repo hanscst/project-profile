@@ -7,6 +7,10 @@ export default defineConfig({
   server: {
     port: 3000,
     host: true,
-    allowedHosts: true
+    allowedHosts: [
+      '.playdev.online',
+      '.skos-labs.playdev.online',
+      '94ido-testing2.skos-labs.playdev.online'
+    ]
   }
 })
