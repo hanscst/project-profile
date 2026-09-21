@@ -33,7 +33,7 @@ export const Navbar: React.FC = () => {
         <div className="flex items-center space-x-3">
           <div className="hidden sm:inline-flex items-center gap-2 px-3 py-1 rounded-full text-xs font-mono bg-teal-950/60 border border-teal-500/30 text-teal-300">
             <span className="w-2 h-2 rounded-full bg-teal-400 animate-pulse"></span>
-            8+ YoE · Open for Lead Roles
+            8+ YoE · Software Engineer
           </div>
           <a
             href="#contact"

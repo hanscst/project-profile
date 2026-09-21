@@ -6,7 +6,7 @@ export const STATS: StatItem[] = [
     label: 'Years of Experience',
     value: 8,
     suffix: '+',
-    description: 'Enterprise & freelance since 2018 — Telkom, Agree, Logee, Multica.',
+    description: 'Enterprise & freelance since 2018 — Telkom Agree, Logee, Multica.',
   },
   {
     id: 'flagship-projects',

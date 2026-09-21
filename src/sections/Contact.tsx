@@ -80,7 +80,7 @@ export const Contact: React.FC = () => {
             </h2>
             <p className="text-slate-300 text-sm sm:text-base max-w-xl mx-auto mb-8 font-light leading-relaxed">
               Interested in discussing system architectures, enterprise platform
-              engineering, or autonomous AI agent integrations? I'm {experience.toLowerCase()} —
+              engineering, or secure cloud-based applications? I'm {experience.toLowerCase()} —
               I'd love to hear about your project.
             </p>
             <a

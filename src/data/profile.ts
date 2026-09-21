@@ -28,7 +28,7 @@ export const PROFILE_DATA = {
   role: "Software Engineer",
   experience: "8+ Years of Experience",
   yearsOfExperience: "8+",
-  tagline: "Software Engineer with 8 years of experience building scalable RESTful APIs, distributed backend systems, and secure cloud-based applications for enterprise and GovTech environments.",
+  tagline: "Software Engineer with 8+ years of experience in JavaScript, Go, and Java building scalable RESTful APIs, distributed backend systems, and secure cloud-based applications for enterprise and GovTech environments.",
   location: "Jakarta, Indonesia",
   availability: {
     available: true,
@@ -40,7 +40,7 @@ export const PROFILE_DATA = {
     linkedin: "https://www.linkedin.com/in/hans-christian-saragih-08a64682",
     github: "https://github.com/hanscst",
   },
-  bio: "Software Engineer with 8 years of experience in JavaScript, Go, and Java — specialized in building scalable RESTful APIs, distributed backend systems, and secure cloud-based applications for enterprise and GovTech environments, with strong experience in performance optimization, automated testing, and production system support.",
+  bio: "Experienced Software Engineer with over 8 years of proven track record in designing, building, and maintaining scalable RESTful APIs, distributed backend systems, and secure cloud-based applications for enterprise and GovTech environments. Specialized in JavaScript, Go, and Java with strong experience in performance optimization, automated testing, and production system support.",
   education: {
     institution: "Telkom University, Indonesia",
     degree: "Bachelor of Informatics Engineering",
@@ -48,47 +48,47 @@ export const PROFILE_DATA = {
   skills: [
     {
       category: "Programming Languages",
-      skills: ["JavaScript / TypeScript (Primary)", "Java (Spring Boot / Enterprise)", "Go (Golang / Microservices)"]
+      skills: ["JavaScript (Primary)", "Java", "Go"]
     },
     {
       category: "Backend & Architecture",
-      skills: ["RESTful API Design", "Distributed Systems", "Microservices & Modular Monolith", "Event-Driven (Kafka / RabbitMQ)", "High Concurrency & Load Balancing"]
+      skills: ["RESTful API Design", "Distributed Systems", "Microservices & Monolithic Architecture"]
     },
     {
-      category: "Databases & Storage",
-      skills: ["PostgreSQL (Query Optimization & pgvector)", "MongoDB", "Redis (Caching / Rate Limiting)", "MinIO / S3 Object Storage"]
+      category: "Databases",
+      skills: ["PostgreSQL", "MongoDB", "Query Optimization"]
     },
     {
-      category: "Cloud, DevOps & AI",
-      skills: ["AWS", "Alibaba Cloud", "Docker & Docker-in-Docker", "Kubernetes", "CI/CD Pipelines", "Autonomous AI Agents & MCP"]
+      category: "Cloud & Infra",
+      skills: ["AWS", "Alibaba Cloud", "Docker", "CI/CD"]
     },
     {
-      category: "Observability & Quality",
-      skills: ["Datadog", "ELK Stack", "SonarQube", "Automated E2E Testing (Midas / Playwright)"]
+      category: "Observability",
+      skills: ["Datadog", "ELK Stack", "SonarQube"]
     }
   ] as SkillCategory[],
   projects: [
     {
       id: "telkom-multica",
       slug: "multica-telkom-dpe",
-      title: "Multica — Custom Enterprise AI Workspace",
+      title: "Multica Project",
       category: "AI & Agents",
-      period: "Aug 2026 - Present",
+      period: "Aug 2026 - Oct 2026",
       role: "Software Engineer",
       companyOrClient: "Telkom Indonesia",
-      summary: "Custom enterprise multi-agent AI orchestration workspace connecting LLMs, isolated container runtimes (PWD), and automated testing (Midas).",
-      problem: "Enterprise development teams required an autonomous yet secure AI coding orchestration platform tailored with internal repository sync and sandboxed execution.",
-      solution: "Engineered custom extensions to Multica, enabling automated PWD container provisioning, GitLab push webhooks, task queuing, and role-based agent coordination.",
+      summary: "Customized Multica platform as AI workspace for Telkom Indonesia.",
+      problem: "Telkom Indonesia needed an AI workspace tailored to its enterprise engineering workflows.",
+      solution: "Customized the Multica platform as an AI workspace for Telkom Indonesia.",
       architecture: [
-        "Multica Go Backend with PostgreSQL (pgvector) state store",
-        "Isolated Docker-in-Docker (dind) PWD runtime containers",
-        "Webhook triggers for automated Git pull and container redeployment",
-        "Midas E2E validation pipeline"
+        "Multica platform backend (Go / PostgreSQL)",
+        "Docker container runtimes",
+        "JavaScript tooling and integrations"
       ],
       techStack: ["Go", "PostgreSQL", "Docker", "JavaScript"],
       highlights: [
-        "Customized Multica platform as an AI workspace for Telkom Indonesia"
+        "Customized Multica platform as AI workspace for Telkom Indonesia"
       ],
+      metrics: "Custom AI workspace deployed for Telkom Indonesia"
     },
     {
       id: "telkom-agree",
@@ -98,21 +98,20 @@ export const PROFILE_DATA = {
       period: "Jan 2019 - Feb 2020",
       role: "Junior Developer",
       companyOrClient: "Telkom Indonesia",
-      summary: "End-to-end digital agriculture platform connecting smallholder farmers, financial institutions, and enterprise offtakers.",
-      problem: "Fragmented agricultural data, lack of supply chain traceability, and manual field logging across distributed regions.",
-      solution: "Engineered scalable RESTful microservices, farm activity trackers, and multi-tenant data schemas capable of serving thousands of daily farm transactions.",
+      summary: "Enhanced a tech platform for agriculture, enabling real-time data sharing that improved stakeholder collaboration by 25%.",
+      problem: "Agricultural stakeholders needed real-time data sharing and better collaboration across the ecosystem.",
+      solution: "Enhanced the agriculture technology platform with real-time data sharing, improving stakeholder collaboration by 25%.",
       architecture: [
-        "Microservices architecture using Java Spring Boot and Go",
-        "PostgreSQL multi-tenant database partitioning",
-        "Redis caching for high-frequency catalog and weather data",
-        "Automated reporting and telemetry ingestion"
+        "JavaScript backend services",
+        "MongoDB data storage",
+        "Firebase and Docker-based deployment"
       ],
       techStack: ["JavaScript", "MongoDB", "Flou Cloud", "MinIO", "SonarQube", "Docker", "Firebase"],
       highlights: [
         "Enhanced a tech platform for agriculture with real-time data sharing",
         "Improved stakeholder collaboration by 25%"
       ],
-      metrics: "Improved stakeholder collaboration by 25% through real-time data sharing"
+      metrics: "25% improvement in stakeholder collaboration"
     },
     {
       id: "telkom-logee",
@@ -122,41 +121,41 @@ export const PROFILE_DATA = {
       period: "Feb 2020 - Feb 2023",
       role: "Lead Backend Developer",
       companyOrClient: "Telkom Indonesia",
-      summary: "Digital B2B logistics platform facilitating cargo booking, truck dispatch, route tracking, and warehouse management.",
-      problem: "High logistics overhead, lack of real-time freight status tracking, and concurrency bottlenecks during peak dispatch windows.",
-      solution: "Built event-driven microservices with Kafka message queues, transactional outbox patterns, and high-concurrency order management engines.",
+      summary: "Built and scaled a B2B logistics management platform integrating multiple services and APIs, improving user experience and enabling a 30% traffic increase with no performance loss.",
+      problem: "B2B logistics operations needed a unified platform integrating multiple services and APIs.",
+      solution: "Built and scaled a B2B logistics management platform integrating services and APIs while improving user experience.",
       architecture: [
-        "Event-driven architecture with Apache Kafka / RabbitMQ",
-        "Distributed lock mechanisms with Redis",
-        "PostgreSQL with optimized B-tree & GiST indexing",
-        "Kubernetes container orchestration on Alibaba Cloud"
+        "JavaScript / TypeScript backend services",
+        "MongoDB data storage",
+        "Kafka event streaming",
+        "Docker deployment on Alibaba Cloud"
       ],
       techStack: ["JavaScript", "TypeScript", "MongoDB", "Flou Cloud", "Alibaba Cloud", "MinIO", "Datadog", "ELK", "SonarQube", "Docker", "Firebase", "Kafka"],
       highlights: [
-        "Built and scaled a B2B logistics management platform",
-        "Enabled a 30% traffic increase with no performance loss"
+        "Integrated multiple services and APIs into a unified logistics platform",
+        "Enabled 30% traffic increase with no performance loss"
       ],
-      metrics: "Enabled 30% traffic increase with no performance loss"
+      metrics: "30% traffic increase with no performance loss"
     },
     {
       id: "church-event-app",
       slug: "us-church-event-app",
       title: "US Church Event & Community Platform",
       category: "Freelance",
-      period: "Jul 2024 - Jan 2025",
+      period: "2024 - 2025",
       role: "Freelance Software Engineer",
-      companyOrClient: "Griya Solusi Teknologi Indonesia",
-      summary: "Comprehensive event management, seat reservation, and attendee engagement platform built for US-based religious organizations.",
-      problem: "Manual attendee tracking and disjointed notification channels during large multi-session conferences.",
-      solution: "Created an automated event portal with role-based dashboard, instant ticket generation, and automated reminder broadcasts.",
+      companyOrClient: "Griya Solusi Teknologi",
+      summary: "Web applications for US-based church event management.",
+      problem: "US-based churches needed web applications to manage their events.",
+      solution: "Developed web applications for US-based church event management.",
       architecture: [
         "Java backend with AdminJS dashboard for staff management",
-        "Azure Cloud hosting with PostgreSQL database",
-        "Automated email and ticket QR generation service"
+        "Azure Cloud hosting with MongoDB/PostgreSQL database",
+        "Text-to-speech and platform integrations"
       ],
       techStack: ["Java", "PostgreSQL", "Azure Cloud", "AdminJS", "MongoDB", "MinIO", "Text-to-Speech", "Railway"],
       highlights: [
-        "Developed web application for US-based church event management"
+        "Web applications for US-based church event management"
       ]
     },
     {
@@ -166,18 +165,18 @@ export const PROFILE_DATA = {
       category: "Freelance",
       period: "Jul 2024 - Jan 2025",
       role: "Freelance Software Engineer",
-      companyOrClient: "Griya Solusi Teknologi Indonesia",
-      summary: "Modern web-based photobooth with real-time camera capture, custom branding filters, automated rendering, and instant QR sharing.",
-      problem: "Bulky, expensive dedicated photobooth software hardware with limited customization and slow export times.",
-      solution: "Built a browser-first photobooth engine utilizing HTML5 Canvas/WebGL image transformations and cloud storage hooks for real-time QR downloading.",
+      companyOrClient: "Griya Solusi Teknologi",
+      summary: "Web-based photobooth systems built for freelance clients.",
+      problem: "Clients needed web-based photobooth systems for events.",
+      solution: "Built web-based photobooth systems.",
       architecture: [
-        "Node.js & JavaScript canvas processing engine",
-        "MinIO object storage for low-latency image assets",
-        "MongoDB for session metadata and instant QR lookup"
+        "JavaScript / Node.js processing engine",
+        "MinIO object storage for image assets",
+        "MongoDB for session metadata"
       ],
       techStack: ["Java", "PostgreSQL", "Azure Cloud", "AdminJS", "MongoDB", "MinIO", "Text-to-Speech", "Railway"],
       highlights: [
-        "Built web-based photobooth systems"
+        "Web-based photobooth systems"
       ]
     },
     {
@@ -187,18 +186,18 @@ export const PROFILE_DATA = {
       category: "Freelance",
       period: "Jul 2024 - Jan 2025",
       role: "Freelance Software Engineer",
-      companyOrClient: "Griya Solusi Teknologi Indonesia",
-      summary: "Micro-learning web/mobile platform delivering chapter summaries with AI-synthesized audio narration.",
-      problem: "Users want quick 15-minute knowledge extraction from non-fiction books with flexible reading/listening options.",
-      solution: "Engineered a content management and audio synthesis pipeline converting structured book transcripts into high-quality audio feeds.",
+      companyOrClient: "Griya Solusi Teknologi",
+      summary: "Mobile & web applications for structured book summaries with audio support.",
+      problem: "Users wanted structured book summaries with audio support across web and mobile.",
+      solution: "Developed mobile & web applications for structured book summaries with audio support.",
       architecture: [
-        "Java / Node.js backend with PostgreSQL content schema",
-        "MinIO / S3 audio streaming distribution",
-        "Text-to-Speech API integration with audio caching on Railway"
+        "Java backend with PostgreSQL content schema",
+        "MinIO audio streaming distribution",
+        "Text-to-Speech API integration on Railway"
       ],
       techStack: ["Java", "PostgreSQL", "Azure Cloud", "AdminJS", "MongoDB", "MinIO", "Text-to-Speech", "Railway"],
       highlights: [
-        "Developed mobile & web applications for structured book summaries with audio support"
+        "Structured book summaries with audio support"
       ]
     }
   ] as ProjectItem[]
@@ -224,9 +223,11 @@ export const companyExperience: ExperienceEntry[] = [
     summary:
       'Eight-year engineering tenure at Telkom spanning enterprise platforms, GovTech systems, and developer enablement — from Agree and Logee to Pijar Kampus, internal developer leadership, and the GovTech SPSE platform.',
     highlights: [
-      'Grew from junior developer to lead backend developer across enterprise and GovTech platforms',
       'Designed and developed scalable backend services and RESTful APIs supporting high-traffic enterprise applications',
-      'Drove engineering standards, developer community, and technical mentorship across teams',
+      'Built and maintained secure web applications, ensuring performance, reliability, and data protection',
+      'Optimized system performance by profiling bottlenecks and resolving production issues',
+      'Supported cloud deployment processes and production environments',
+      'Mentored junior engineers and supported cross-team collaboration',
     ],
     techStack: ['JavaScript', 'Java', 'Go', 'PostgreSQL', 'MongoDB', 'Docker', 'AWS', 'Alibaba Cloud', 'Datadog', 'ELK', 'SonarQube'],
   },
@@ -241,10 +242,9 @@ export const projectExperience: ExperienceEntry[] = [
     start: '2026-08',
     end: 'present',
     summary:
-      'Customized Multica, a multi-agent AI orchestration workspace, as an AI workspace for Telkom Indonesia.',
+      'Customized Multica platform as AI workspace for Telkom Indonesia.',
     highlights: [
-      'Customized Multica platform as an AI workspace for Telkom Indonesia',
-      'Integrated isolated Docker-in-Docker runtimes and CI/CD push synchronization',
+      'Customized Multica platform as AI workspace for Telkom Indonesia',
     ],
     techStack: ['Go', 'PostgreSQL', 'Docker', 'JavaScript'],
   },
@@ -256,7 +256,7 @@ export const projectExperience: ExperienceEntry[] = [
     start: '2025-10',
     end: '2026-07',
     summary:
-      'Engineered backend services and APIs for Telkom’s GovTech procurement platform (SPSE), supporting public-sector procurement workflows.',
+      'Refactored legacy Java GovTech services to Go, improving maintainability and deployment speed for the SPSE national procurement platform.',
     highlights: [
       'Refactored legacy Java services to Go, improving maintainability and deployment speed',
       'Contributed to scalability and long-term sustainability of a national procurement platform',
@@ -271,7 +271,7 @@ export const projectExperience: ExperienceEntry[] = [
     start: '2025-02',
     end: '2025-10',
     summary:
-      'Engineered enterprise application and data-delivery systems for Telkom’s internal platforms.',
+      'Designed modular enterprise solution data aggregation and an executive dashboard, and collaborated across divisions to initiate AI-Hub for Danantara.',
     highlights: [
       'Designed modular enterprise solution data aggregation and executive dashboard',
       'Reduced MVP development lifecycle from 2 weeks to 3 days, enabling faster executive demos',
@@ -287,9 +287,9 @@ export const projectExperience: ExperienceEntry[] = [
     start: '2024-02',
     end: '2025-02',
     summary:
-      'Developed features for Pijar Kampus, Telkom’s education-technology platform serving students and institutions.',
+      'Developed a data aggregation product delivering insights 4x faster by optimizing workflows that previously required three months, now completed in three weeks.',
     highlights: [
-      'Developed a data aggregation product delivering insights 4x faster — workflows that previously required three months are now completed in three weeks',
+      'Delivered insights 4x faster by optimizing data processing workflows from three months to three weeks',
     ],
     techStack: ['PHP', 'JavaScript', 'MongoDB', 'PostgreSQL', 'Pentaho', 'SQL Query'],
   },
@@ -301,10 +301,9 @@ export const projectExperience: ExperienceEntry[] = [
     start: '2023-02',
     end: '2024-02',
     summary:
-      'Led the developer chapter — enabling engineering teams through shared standards, tooling, and community.',
+      'Led codebase scaling, documentation, and standardization efforts, reducing development time from three days to one.',
     highlights: [
       'Led codebase scaling, documentation, and standardization efforts, reducing development time from three days to one',
-      'Mentored engineers and supported cross-team collaboration',
     ],
     techStack: ['JavaScript', 'TypeScript', 'Go', 'MongoDB', 'PostgreSQL', 'MariaDB', 'AWS', 'MinIO', 'Datadog', 'ELK', 'SonarQube', 'Docker', 'Firebase', 'OCA Omnichannel'],
   },
@@ -316,7 +315,7 @@ export const projectExperience: ExperienceEntry[] = [
     start: '2020-02',
     end: '2023-02',
     summary:
-      'Delivered Logee, Telkom’s B2B logistics and supply-chain marketplace for cargo booking, truck dispatch, and live tracking.',
+      'Built and scaled a B2B logistics management platform integrating multiple services and APIs, improving user experience and enabling a 30% traffic increase with no performance loss.',
     highlights: [
       'Built and scaled a B2B logistics management platform integrating multiple services and APIs',
       'Enabled a 30% traffic increase with no performance loss',
@@ -331,9 +330,9 @@ export const projectExperience: ExperienceEntry[] = [
     start: '2019-01',
     end: '2020-02',
     summary:
-      'Built the Agree digital agriculture ecosystem connecting smallholder farmers, financial institutions, and enterprise offtakers.',
+      'Enhanced a tech platform for agriculture, enabling real-time data sharing that improved stakeholder collaboration by 25%.',
     highlights: [
-      'Enhanced a tech platform for agriculture, enabling real-time data sharing',
+      'Enhanced the agriculture tech platform with real-time data sharing',
       'Improved stakeholder collaboration by 25%',
     ],
     techStack: ['JavaScript', 'MongoDB', 'Flou Cloud', 'MinIO', 'SonarQube', 'Docker', 'Firebase'],
@@ -353,9 +352,9 @@ export const freelanceExperience: ExperienceEntry[] = [
     summary:
       'Freelance engineering across three client projects — US Church Event App, Web Photobooth, and Book Summary Audio App.',
     highlights: [
-      'US Church Event App — event management, seat reservation, and attendee engagement',
-      'Web Photobooth — zero-install browser capture with instant sharing',
-      'Book Summary Audio App — micro-learning platform with AI-synthesized audio',
+      'US Church Event App — web applications for event management',
+      'Web Photobooth — browser-based capture with instant sharing',
+      'Book Summary Audio App — structured book summaries with audio support',
       'Delivered fullstack solutions end-to-end, from backend services to browser UIs',
     ],
     techStack: ['Java', 'PostgreSQL', 'Azure Cloud', 'AdminJS', 'MongoDB', 'MinIO', 'Text-to-Speech', 'Railway'],
