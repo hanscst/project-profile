@@ -6,13 +6,13 @@ export const STATS: StatItem[] = [
     label: 'Years of Experience',
     value: 8,
     suffix: '+',
-    description: 'Enterprise & freelance since 2017 — Telkom Agree, Logee, DPE.',
+    description: 'Enterprise & freelance since 2018 — Telkom, Agree, Logee, Multica.',
   },
   {
     id: 'flagship-projects',
     label: 'Flagship Projects',
     value: 6,
-    description: 'Agree, Logee, Multica DPE, US Church App, Photobooth, Book Summary.',
+    description: 'Agree, Logee, Multica, US Church App, Photobooth, Book Summary.',
   },
   {
     id: 'traffic-growth',

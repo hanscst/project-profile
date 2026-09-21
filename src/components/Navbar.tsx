@@ -11,7 +11,7 @@ export const Navbar: React.FC = () => {
           </div>
           <div>
             <span className="font-bold text-slate-100 text-sm md:text-base tracking-tight block">Hans Christian</span>
-            <span className="text-xs text-teal-400 font-mono">Sr. Software Engineer</span>
+            <span className="text-xs text-teal-400 font-mono">Software Engineer</span>
           </div>
         </a>
 

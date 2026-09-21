@@ -27,9 +27,9 @@ export const CASE_STUDIES: CaseStudy[] = [
       'Strict secret isolation was required to let AI agents work against production codebases.',
     ],
     context: [
-      'Customized Multica multi-agent AI orchestration platform for Telkom Digital Platform Engineering (DPE).',
+      'Customized Multica multi-agent AI orchestration platform as an AI workspace for Telkom Indonesia.',
       'Used by cross-functional teams — PO/PM, Dev, QA, DevOps — coordinating through autonomous agents.',
-      'Full-time enterprise engagement, Jakarta / remote, 2024 – present.',
+      'Full-time enterprise engagement, Jakarta, Aug 2026 – present.',
     ],
     architecture: {
       nodes: [
@@ -72,8 +72,8 @@ export const CASE_STUDIES: CaseStudy[] = [
       },
     ],
     impact: [
-      { label: 'Faster feature turnaround', value: '60%', context: 'agentic workflows vs manual handoffs' },
-      { label: 'Dev cycle reduction', value: '66%', context: 'standardized backend delivery' },
+      { label: 'AI workspace', value: 'Customized', context: 'Multica as AI workspace for Telkom Indonesia' },
+      { label: 'Client', value: 'Telkom Indonesia', context: 'enterprise AI orchestration' },
     ],
     lessonsLearned: [
       'Guardrails beat raw autonomy — agent capability must be scoped to isolated runtimes.',
@@ -90,7 +90,7 @@ export const CASE_STUDIES: CaseStudy[] = [
     ],
     context: [
       'Digital agriculture ecosystem by Telkom Indonesia connecting smallholder farmers, agricultural input suppliers, enterprise offtakers, and logistics.',
-      'Multi-tenant data model serving tens of thousands of active farmer profiles with thousands of daily farm transactions.',
+      'Real-time data sharing across the agriculture ecosystem connecting farmers, buyers, and financial institutions.',
       'Full-time enterprise engagement, Jan 2019 – Feb 2020.',
     ],
     architecture: {
@@ -124,15 +124,14 @@ export const CASE_STUDIES: CaseStudy[] = [
           'Ingesting real-time farm activity logs at scale while keeping dashboards responsive via Redis caching.',
       },
       {
-        title: 'Third-party gateway reliability',
+        title: 'Real-time data sharing',
         description:
-          'Integrating payment and logistics gateways under a 99.9% uptime SLA across all core transaction APIs.',
+          'Enabling reliable real-time data sharing across the agriculture ecosystem to improve stakeholder collaboration.',
       },
     ],
     impact: [
-      { label: 'Active agricultural transactions', value: '100k+', context: 'processed across the ecosystem' },
-      { label: 'Uptime SLA', value: '99.9%', context: 'across core transaction APIs' },
-      { label: 'Active farmer profiles', value: '10k+', context: 'scaled multi-tenant platform' },
+      { label: 'Stakeholder collaboration', value: '25%', context: 'improved via real-time data sharing' },
+      { label: 'Data sharing', value: 'Real-time', context: 'across the agriculture ecosystem' },
     ],
     lessonsLearned: [
       'Multi-tenant data modeling is the foundation for scaling agritech platforms safely.',
@@ -183,20 +182,14 @@ export const CASE_STUDIES: CaseStudy[] = [
           'Distributed locks via Redis to prevent double-dispatch and double-booking in tight windows.',
       },
       {
-        title: 'Sub-100ms order lookups',
-        description:
-          'Optimized PostgreSQL indexing (B-tree & GiST) plus Redis caching for high-volume order reads.',
-      },
-      {
         title: 'Fault tolerance at the edge',
         description:
           'Circuit breakers and retries so telematics ingestion failures never blocked core order flow.',
       },
     ],
     impact: [
-      { label: 'Traffic growth', value: '30%', context: 'platform traffic without downtime' },
-      { label: 'Shipments orchestrated', value: '50k+', context: 'across Indonesia' },
-      { label: 'Order lookup latency', value: '<100ms', context: 'high-volume order reads' },
+      { label: 'Traffic increase', value: '30%', context: 'with no performance loss' },
+      { label: 'B2B logistics platform', value: 'Built & scaled', context: 'integrating multiple services and APIs' },
     ],
     lessonsLearned: [
       'Event-driven architecture with an outbox pattern cleanly handles peak-load consistency.',
@@ -213,7 +206,7 @@ export const CASE_STUDIES: CaseStudy[] = [
     ],
     context: [
       'Telkom\u2019s GovTech procurement platform (SPSE) supporting public-sector procurement workflows.',
-      'Backend services and APIs serving high-volume procurement transactions for government agencies.',
+      'Backend services and APIs for a national procurement platform used by government agencies.',
       'Full-time enterprise engagement, Oct 2025 – Jul 2026.',
     ],
     architecture: {
@@ -252,8 +245,8 @@ export const CASE_STUDIES: CaseStudy[] = [
       },
     ],
     impact: [
-      { label: 'Procurement transactions', value: 'High-volume', context: 'across government agencies' },
-      { label: 'API reliability', value: 'Improved', context: 'under high load' },
+      { label: 'Legacy refactor', value: 'Java → Go', context: 'improving maintainability and deployment speed' },
+      { label: 'National platform', value: 'Scalable', context: 'long-term sustainability' },
     ],
     lessonsLearned: [
       'Reliability and compliance are non-negotiable in public-sector platforms.',
@@ -307,8 +300,8 @@ export const CASE_STUDIES: CaseStudy[] = [
       },
     ],
     impact: [
-      { label: 'Seat double-bookings', value: '0', context: 'atomic reservation engine' },
-      { label: 'Ticket generation', value: 'Instant', context: 'QR-based, automated' },
+      { label: 'Client', value: 'US churches', context: 'religious organizations' },
+      { label: 'Scope', value: 'Event management', context: 'web application' },
     ],
     lessonsLearned: [
       'Atomic reservation logic is the difference between a trustworthy and a frustrating booking flow.',
@@ -360,8 +353,8 @@ export const CASE_STUDIES: CaseStudy[] = [
       },
     ],
     impact: [
-      { label: 'Image render time', value: '<1s', context: 'canvas/WebGL processing' },
-      { label: 'Client install footprint', value: 'Zero', context: 'browser-first, kiosk-ready' },
+      { label: 'Form', value: 'Web-based', context: 'photobooth system' },
+      { label: 'Delivery', value: 'Freelance', context: 'for Griya Solusi Teknologi Indonesia' },
     ],
     lessonsLearned: [
       'Pushing image processing to the browser removes hardware cost and install friction.',
@@ -378,7 +371,7 @@ export const CASE_STUDIES: CaseStudy[] = [
     context: [
       'Micro-learning web/mobile platform delivering chapter-by-chapter book summaries with synchronized Text-to-Speech audio.',
       'Targets a 15-minute knowledge loop per book while preserving depth of the original material.',
-      'Freelance / personal project deployed on Railway, 2024.',
+      'Freelance delivery for Griya Solusi Teknologi Indonesia, Jul 2024 – Jan 2025.',
     ],
     architecture: {
       nodes: [
@@ -415,8 +408,8 @@ export const CASE_STUDIES: CaseStudy[] = [
       },
     ],
     impact: [
-      { label: 'Production cost saved', value: '90%', context: 'automated TTS pipeline vs studio' },
-      { label: 'Per-book summary time', value: '15 min', context: 'chapter-by-chapter micro-learning' },
+      { label: 'Apps', value: 'Mobile & web', context: 'structured book summaries with audio' },
+      { label: 'Audio', value: 'Supported', context: 'synchronized text-to-speech' },
     ],
     lessonsLearned: [
       'Automating the content pipeline is where the biggest cost lever lives.',

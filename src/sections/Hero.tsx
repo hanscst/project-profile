@@ -7,9 +7,9 @@ import {
   MapPin,
   Github,
   Linkedin,
-  Layers,
-  Bot,
-  ShieldCheck,
+  TrendingUp,
+  Gauge,
+  Zap,
   Phone,
 } from 'lucide-react';
 
@@ -124,34 +124,34 @@ export const Hero: React.FC = () => {
           <div className="glass-card rounded-2xl p-4 sm:p-5 transition-all">
             <div className="flex items-center gap-3 mb-2">
               <div className="w-8 h-8 rounded-lg bg-indigo-500/20 text-indigo-400 flex items-center justify-center">
-                <Layers className="w-4 h-4" />
+                <TrendingUp className="w-4 h-4" />
               </div>
-              <span className="text-2xl sm:text-3xl font-extrabold text-white">100k+</span>
+              <span className="text-2xl sm:text-3xl font-extrabold text-white">30%</span>
             </div>
-            <p className="text-xs sm:text-sm text-slate-400 font-medium">Daily Transactions</p>
-            <p className="text-[11px] text-slate-500 mt-1">Telkom Agree & Logee</p>
+            <p className="text-xs sm:text-sm text-slate-400 font-medium">Traffic Growth</p>
+            <p className="text-[11px] text-slate-500 mt-1">Logee — no performance loss</p>
           </div>
 
           <div className="glass-card rounded-2xl p-4 sm:p-5 transition-all">
             <div className="flex items-center gap-3 mb-2">
               <div className="w-8 h-8 rounded-lg bg-cyan-500/20 text-cyan-400 flex items-center justify-center">
-                <Bot className="w-4 h-4" />
+                <Gauge className="w-4 h-4" />
               </div>
-              <span className="text-2xl sm:text-3xl font-extrabold text-white">Custom</span>
+              <span className="text-2xl sm:text-3xl font-extrabold text-white">66%</span>
             </div>
-            <p className="text-xs sm:text-sm text-slate-400 font-medium">AI Agent Platforms</p>
-            <p className="text-[11px] text-slate-500 mt-1">Multica DPE & PWD Runtimes</p>
+            <p className="text-xs sm:text-sm text-slate-400 font-medium">Dev Cycle Reduction</p>
+            <p className="text-[11px] text-slate-500 mt-1">Backend standardization</p>
           </div>
 
           <div className="glass-card rounded-2xl p-4 sm:p-5 transition-all">
             <div className="flex items-center gap-3 mb-2">
               <div className="w-8 h-8 rounded-lg bg-emerald-500/20 text-emerald-400 flex items-center justify-center">
-                <ShieldCheck className="w-4 h-4" />
+                <Zap className="w-4 h-4" />
               </div>
-              <span className="text-2xl sm:text-3xl font-extrabold text-white">99.9%</span>
+              <span className="text-2xl sm:text-3xl font-extrabold text-white">4x</span>
             </div>
-            <p className="text-xs sm:text-sm text-slate-400 font-medium">System Reliability</p>
-            <p className="text-[11px] text-slate-500 mt-1">SLA & Microservices</p>
+            <p className="text-xs sm:text-sm text-slate-400 font-medium">Faster Insights</p>
+            <p className="text-[11px] text-slate-500 mt-1">Data processing workflows</p>
           </div>
         </div>
       </div>
