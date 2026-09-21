@@ -10,7 +10,25 @@ export default defineConfig({
     allowedHosts: [
       '.playdev.online',
       '.skos-labs.playdev.online',
-      '94ido-testing2.skos-labs.playdev.online'
+      '.localhost',
+      'localhost'
+    ],
+    hmr: {
+      overlay: false
+    },
+    watch: {
+      usePolling: false,
+      ignored: ['**/node_modules/**', '**/.git/**', '**/dist/**']
+    }
+  },
+  preview: {
+    port: 3000,
+    host: true,
+    allowedHosts: [
+      '.playdev.online',
+      '.skos-labs.playdev.online',
+      '.localhost',
+      'localhost'
     ]
   }
 })
