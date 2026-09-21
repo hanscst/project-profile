@@ -63,6 +63,23 @@ export const PROJECTS: Project[] = [
     accentColor: '#f59e0b',
   },
   {
+    id: 'telkom-govtech-spse',
+    title: 'GovTech Procurement (SPSE)',
+    subtitle: 'Public-sector e-procurement platform streamlining government procurement workflows.',
+    role: 'Software Engineer',
+    period: 'Oct 2025 – Jul 2026',
+    company: 'PT Telkom Indonesia',
+    category: 'govtech',
+    techStack: ['Java', 'Go', 'PostgreSQL', 'REST APIs'],
+    impactMetrics: [
+      { label: 'Procurement transactions', value: 'High-volume' },
+      { label: 'API reliability', value: 'Improved' },
+    ],
+    summary:
+      'Engineered backend services and APIs for Telkom\u2019s GovTech procurement platform (SPSE), supporting public-sector procurement workflows. Improved API reliability and performance for high-volume procurement transactions.',
+    accentColor: '#6366f1',
+  },
+  {
     id: 'us-church-event-app',
     title: 'US Church Event App',
     subtitle: 'Ticketing, seat reservations, and attendee engagement for US-based churches.',

@@ -205,6 +205,63 @@ export const CASE_STUDIES: CaseStudy[] = [
     ],
   }),
 
+  cs('telkom-govtech-spse', {
+    problem: [
+      'Government procurement workflows were fragmented across manual, paper-based processes.',
+      'Public-sector buyers and suppliers needed a unified digital channel to run procurement end-to-end.',
+      'High-volume transaction periods demanded reliable APIs with predictable performance.',
+    ],
+    context: [
+      'Telkom\u2019s GovTech procurement platform (SPSE) supporting public-sector procurement workflows.',
+      'Backend services and APIs serving high-volume procurement transactions for government agencies.',
+      'Full-time enterprise engagement, Oct 2025 – Jul 2026.',
+    ],
+    architecture: {
+      nodes: [
+        { id: 'client', label: 'Procurement Portal', type: 'client' },
+        { id: 'gateway', label: 'API Gateway', type: 'api' },
+        { id: 'procure', label: 'Procurement Service (Java)', type: 'service' },
+        { id: 'tender', label: 'Tender Engine (Go)', type: 'service' },
+        { id: 'db', label: 'PostgreSQL', type: 'db' },
+        { id: 'audit', label: 'Audit & Reporting', type: 'service' },
+      ],
+      flows: [
+        { from: 'client', to: 'gateway', label: 'REST' },
+        { from: 'gateway', to: 'procure', label: 'procurement ops' },
+        { from: 'gateway', to: 'tender', label: 'tender processing' },
+        { from: 'procure', to: 'db', label: 'read/write' },
+        { from: 'tender', to: 'db', label: 'persist' },
+        { from: 'procure', to: 'audit', label: 'compliance logs' },
+      ],
+    },
+    challenges: [
+      {
+        title: 'High-volume transaction reliability',
+        description:
+          'Keeping procurement APIs reliable and performant under heavy transaction loads across agencies.',
+      },
+      {
+        title: 'Public-sector compliance',
+        description:
+          'Meeting strict auditability and compliance requirements for government procurement workflows.',
+      },
+      {
+        title: 'Workflow digitization',
+        description:
+          'Replacing fragmented manual processes with a unified digital procurement experience.',
+      },
+    ],
+    impact: [
+      { label: 'Procurement transactions', value: 'High-volume', context: 'across government agencies' },
+      { label: 'API reliability', value: 'Improved', context: 'under high load' },
+    ],
+    lessonsLearned: [
+      'Reliability and compliance are non-negotiable in public-sector platforms.',
+      'High-volume API workloads demand deliberate indexing and caching.',
+      'Digitizing procurement removes manual overhead and increases transparency.',
+    ],
+  }),
+
   cs('us-church-event-app', {
     problem: [
       'Manual attendee tracking and disjointed notification channels during large multi-session conferences.',
