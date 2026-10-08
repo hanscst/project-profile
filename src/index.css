@@ -31,7 +31,7 @@ code, pre {
   }
 
   .glass-card:hover {
-    border-color: rgba(20, 184, 166, 0.4);
-    box-shadow: 0 10px 30px -10px rgba(20, 184, 166, 0.15);
+    border-color: rgba(239, 68, 68, 0.55);
+    box-shadow: 0 10px 32px -10px rgba(239, 68, 68, 0.35);
   }
 }

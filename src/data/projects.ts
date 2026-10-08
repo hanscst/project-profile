@@ -24,7 +24,7 @@ export const PROJECTS: Project[] = [
     ],
     summary:
       'Customized Multica platform as AI workspace for Telkom Indonesia.',
-    accentColor: '#14b8a6',
+    accentColor: '#ef4444',
   },
   {
     id: 'telkom-agree',
@@ -41,7 +41,7 @@ export const PROJECTS: Project[] = [
     ],
     summary:
       'Enhanced a tech platform for agriculture, enabling real-time data sharing that improved stakeholder collaboration by 25%.',
-    accentColor: '#22c55e',
+    accentColor: '#f97316',
   },
   {
     id: 'telkom-logee',
@@ -75,7 +75,7 @@ export const PROJECTS: Project[] = [
     ],
     summary:
       'Refactored legacy Java services to Go, improving maintainability and deployment speed, and contributed to the scalability and long-term sustainability of a national procurement platform.',
-    accentColor: '#6366f1',
+    accentColor: '#dc2626',
   },
   {
     id: 'us-church-event-app',
@@ -92,7 +92,7 @@ export const PROJECTS: Project[] = [
     ],
     summary:
       'Developed web applications for US-based church event management.',
-    accentColor: '#a78bfa',
+    accentColor: '#fb7185',
   },
   {
     id: 'web-photobooth',
@@ -109,7 +109,7 @@ export const PROJECTS: Project[] = [
     ],
     summary:
       'Built web-based photobooth systems.',
-    accentColor: '#38bdf8',
+    accentColor: '#f43f5e',
   },
   {
     id: 'book-summary-audio',
@@ -126,6 +126,6 @@ export const PROJECTS: Project[] = [
     ],
     summary:
       'Developed mobile & web applications for structured book summaries with audio support.',
-    accentColor: '#f472b6',
+    accentColor: '#e11d48',
   },
 ];

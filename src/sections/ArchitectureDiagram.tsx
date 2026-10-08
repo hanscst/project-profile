@@ -2,12 +2,12 @@ import React from 'react';
 import type { ArchitectureFlow, ArchitectureNode, ArchitectureNodeType } from '../types/caseStudy';
 
 const TYPE_COLORS: Record<ArchitectureNodeType, { stroke: string; fill: string; text: string }> = {
-  client: { stroke: '#38bdf8', fill: 'rgba(56,189,248,0.08)', text: '#7dd3fc' },
-  api: { stroke: '#a78bfa', fill: 'rgba(167,139,250,0.08)', text: '#c4b5fd' },
-  service: { stroke: '#14b8a6', fill: 'rgba(20,184,166,0.08)', text: '#5eead4' },
+  client: { stroke: '#fb923c', fill: 'rgba(251,146,60,0.08)', text: '#fdba74' },
+  api: { stroke: '#fb7185', fill: 'rgba(251,113,133,0.08)', text: '#fda4af' },
+  service: { stroke: '#ef4444', fill: 'rgba(239,68,68,0.08)', text: '#fca5a5' },
   db: { stroke: '#f59e0b', fill: 'rgba(245,158,11,0.08)', text: '#fcd34d' },
   external: { stroke: '#f43f5e', fill: 'rgba(244,63,94,0.08)', text: '#fda4af' },
-  queue: { stroke: '#22d3ee', fill: 'rgba(34,211,238,0.08)', text: '#67e8f9' },
+  queue: { stroke: '#fbbf24', fill: 'rgba(251,191,36,0.08)', text: '#fcd34d' },
 };
 
 export const TYPE_LABELS: Record<ArchitectureNodeType, string> = {
@@ -62,7 +62,7 @@ export const ArchitectureDiagram: React.FC<ArchitectureDiagramProps> = ({ nodes,
       >
         <defs>
           <marker id="arrowhead" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
-            <polygon points="0 0, 10 3.5, 0 7" fill="#5eead4" />
+            <polygon points="0 0, 10 3.5, 0 7" fill="#fca5a5" />
           </marker>
         </defs>
 
@@ -79,7 +79,7 @@ export const ArchitectureDiagram: React.FC<ArchitectureDiagramProps> = ({ nodes,
                 y1={from.y}
                 x2={to.x}
                 y2={to.y}
-                stroke="#14b8a6"
+                stroke="#ef4444"
                 strokeWidth="1.5"
                 strokeDasharray="5 4"
                 opacity="0.7"
@@ -90,7 +90,7 @@ export const ArchitectureDiagram: React.FC<ArchitectureDiagramProps> = ({ nodes,
                   x={mid.x}
                   y={mid.y - 7}
                   textAnchor="middle"
-                  fill="#5eead4"
+                  fill="#fca5a5"
                   fontSize="11"
                   fontFamily="'JetBrains Mono', monospace"
                 >

@@ -68,7 +68,7 @@ export const CaseStudyModal: React.FC<CaseStudyModalProps> = ({
     }
   };
 
-  const accent = caseStudy.accentColor ?? '#14b8a6';
+  const accent = caseStudy.accentColor ?? '#ef4444';
 
   const SectionTitle: React.FC<{ icon: React.ReactNode; label: string; color: string }> = ({
     icon,
@@ -93,7 +93,7 @@ export const CaseStudyModal: React.FC<CaseStudyModalProps> = ({
         ref={modalRef}
         onKeyDown={handleKeyDown}
         onClick={(e) => e.stopPropagation()}
-        className="relative w-full max-w-4xl my-8 glass-card rounded-3xl p-6 sm:p-8 max-h-[90vh] overflow-y-auto border border-teal-500/30 shadow-2xl"
+        className="relative w-full max-w-4xl my-8 glass-card rounded-3xl p-6 sm:p-8 max-h-[90vh] overflow-y-auto border border-red-500/30 shadow-2xl"
       >
         {/* Close Button */}
         <button
@@ -122,7 +122,7 @@ export const CaseStudyModal: React.FC<CaseStudyModalProps> = ({
             <span className="text-xs text-slate-400 font-mono">{caseStudy.period}</span>
           </div>
           <h2 className="text-2xl sm:text-3xl font-extrabold text-white">{caseStudy.title}</h2>
-          <p className="text-xs text-teal-400 font-mono mt-1">
+          <p className="text-xs text-red-400 font-mono mt-1">
             {caseStudy.role} · {caseStudy.company}
           </p>
           <p className="text-sm text-slate-300 leading-relaxed mt-3">{caseStudy.subtitle}</p>
@@ -142,11 +142,11 @@ export const CaseStudyModal: React.FC<CaseStudyModalProps> = ({
             </ul>
           </div>
           <div className="p-4 rounded-2xl bg-slate-900/60 border border-slate-800">
-            <SectionTitle icon={<Info className="w-4 h-4" />} label="Business Context" color="text-sky-400" />
+            <SectionTitle icon={<Info className="w-4 h-4" />} label="Business Context" color="text-amber-400" />
             <ul className="space-y-2">
               {caseStudy.context.map((item, idx) => (
                 <li key={idx} className="flex items-start gap-2 text-sm text-slate-300">
-                  <div className="w-1.5 h-1.5 rounded-full bg-sky-400 mt-2 shrink-0" />
+                  <div className="w-1.5 h-1.5 rounded-full bg-amber-400 mt-2 shrink-0" />
                   <span>{item}</span>
                 </li>
               ))}
@@ -156,7 +156,7 @@ export const CaseStudyModal: React.FC<CaseStudyModalProps> = ({
 
         {/* Architecture */}
         <div className="mb-6">
-          <SectionTitle icon={<Boxes className="w-4 h-4" />} label="System Architecture & Data Flow" color="text-cyan-400" />
+          <SectionTitle icon={<Boxes className="w-4 h-4" />} label="System Architecture & Data Flow" color="text-orange-400" />
           <ArchitectureDiagram
             nodes={caseStudy.architecture.nodes}
             flows={caseStudy.architecture.flows}
@@ -165,7 +165,7 @@ export const CaseStudyModal: React.FC<CaseStudyModalProps> = ({
 
         {/* Challenges */}
         <div className="mb-6">
-          <SectionTitle icon={<Target className="w-4 h-4" />} label="Key Engineering Challenges" color="text-emerald-400" />
+          <SectionTitle icon={<Target className="w-4 h-4" />} label="Key Engineering Challenges" color="text-rose-400" />
           <div className="grid sm:grid-cols-2 gap-3">
             {caseStudy.challenges.map((c, idx) => (
               <div key={idx} className="p-4 rounded-2xl bg-slate-900/60 border border-slate-800">
@@ -181,8 +181,8 @@ export const CaseStudyModal: React.FC<CaseStudyModalProps> = ({
           <SectionTitle icon={<BarChart3 className="w-4 h-4" />} label="Results & Impact" color="text-amber-400" />
           <div className="grid grid-cols-2 sm:grid-cols-3 gap-3">
             {caseStudy.impact.map((m) => (
-              <div key={m.label} className="px-4 py-3 rounded-2xl bg-teal-950/50 border border-teal-500/30">
-                <div className="text-xl font-extrabold text-teal-300 font-mono">{m.value}</div>
+              <div key={m.label} className="px-4 py-3 rounded-2xl bg-red-950/50 border border-red-500/30">
+                <div className="text-xl font-extrabold text-red-300 font-mono">{m.value}</div>
                 <div className="text-[11px] text-slate-300 mt-1">{m.label}</div>
                 {m.context && <div className="text-[10px] text-slate-500 mt-0.5">{m.context}</div>}
               </div>
@@ -192,11 +192,11 @@ export const CaseStudyModal: React.FC<CaseStudyModalProps> = ({
 
         {/* Lessons Learned */}
         <div className="mb-6">
-          <SectionTitle icon={<Lightbulb className="w-4 h-4" />} label="Lessons Learned" color="text-violet-400" />
+          <SectionTitle icon={<Lightbulb className="w-4 h-4" />} label="Lessons Learned" color="text-rose-400" />
           <ul className="space-y-2">
             {caseStudy.lessonsLearned.map((item, idx) => (
               <li key={idx} className="flex items-start gap-2 text-sm text-slate-300">
-                <div className="w-1.5 h-1.5 rounded-full bg-violet-400 mt-2 shrink-0" />
+                <div className="w-1.5 h-1.5 rounded-full bg-rose-400 mt-2 shrink-0" />
                 <span>{item}</span>
               </li>
             ))}
@@ -213,7 +213,7 @@ export const CaseStudyModal: React.FC<CaseStudyModalProps> = ({
           </button>
           <button
             onClick={onClose}
-            className="px-5 py-2.5 rounded-xl bg-teal-500 hover:bg-teal-400 text-slate-950 font-semibold text-sm transition-all"
+            className="px-5 py-2.5 rounded-xl bg-red-500 hover:bg-red-400 text-slate-950 font-semibold text-sm transition-all"
           >
             Close Case Study
           </button>

@@ -47,14 +47,14 @@ const CareerCard: React.FC<CareerCardProps> = ({ entry, expanded, onToggle }) =>
             </span>
           )}
         </div>
-        <span className="inline-flex items-center gap-1.5 text-xs font-mono text-teal-300 px-3 py-1 rounded-full bg-teal-950/60 border border-teal-500/20">
+        <span className="inline-flex items-center gap-1.5 text-xs font-mono text-red-300 px-3 py-1 rounded-full bg-red-950/60 border border-red-500/20">
           <Calendar className="w-3.5 h-3.5" /> {entry.period}
         </span>
       </div>
 
       <h3 className="text-xl font-bold text-white">{entry.role}</h3>
       <p className="flex items-center gap-1.5 text-sm text-slate-300 mt-1">
-        <Building className="w-3.5 h-3.5 text-teal-400" /> {entry.name}
+        <Building className="w-3.5 h-3.5 text-red-400" /> {entry.name}
       </p>
 
       <p className="text-sm text-slate-400 mt-3 leading-relaxed">{entry.summary}</p>
@@ -65,7 +65,7 @@ const CareerCard: React.FC<CareerCardProps> = ({ entry, expanded, onToggle }) =>
         onClick={onToggle}
         aria-expanded={expanded}
         aria-controls={`career-highlights-${entry.id}`}
-        className="mt-4 inline-flex items-center gap-1.5 text-sm font-semibold text-teal-400 hover:text-teal-300 transition-colors"
+        className="mt-4 inline-flex items-center gap-1.5 text-sm font-semibold text-red-400 hover:text-red-300 transition-colors"
       >
         <ChevronDown
           className={`w-4 h-4 transition-transform ${expanded ? 'rotate-180' : ''}`}
@@ -83,7 +83,7 @@ const CareerCard: React.FC<CareerCardProps> = ({ entry, expanded, onToggle }) =>
             key={hIdx}
             className="flex items-start gap-2 text-sm text-slate-300 leading-relaxed"
           >
-            <ChevronRight className="w-4 h-4 text-teal-400 shrink-0 mt-0.5" aria-hidden="true" />
+            <ChevronRight className="w-4 h-4 text-red-400 shrink-0 mt-0.5" aria-hidden="true" />
             <span>{highlight}</span>
           </li>
         ))}
@@ -129,7 +129,7 @@ const ExperienceGroup: React.FC<ExperienceGroupProps> = ({
     <div className="mt-16 first:mt-0" data-testid={`experience-group-${section.id}`}>
       {/* Group heading — title comes from data, not hardcoded */}
       <div className="flex items-center gap-3 mb-10">
-        <div className="w-11 h-11 rounded-xl bg-teal-500/15 text-teal-400 flex items-center justify-center border border-teal-500/20 shrink-0">
+        <div className="w-11 h-11 rounded-xl bg-red-500/15 text-red-400 flex items-center justify-center border border-red-500/20 shrink-0">
           <Icon className="w-5 h-5" />
         </div>
         <div>
@@ -167,7 +167,7 @@ const ExperienceGroup: React.FC<ExperienceGroupProps> = ({
               >
                 {/* Timeline node */}
                 <div
-                  className="absolute left-4 md:left-1/2 top-2 -translate-x-1/2 w-4 h-4 rounded-full bg-slate-950 border-2 border-teal-400"
+                  className="absolute left-4 md:left-1/2 top-2 -translate-x-1/2 w-4 h-4 rounded-full bg-slate-950 border-2 border-red-400"
                   aria-hidden="true"
                 />
 
@@ -256,7 +256,7 @@ export const Timeline: React.FC = () => {
     <section id="timeline" data-testid="career-timeline" className="py-24 px-4 relative">
       <div className="max-w-5xl mx-auto">
         <div className="text-center mb-16">
-          <div className="inline-flex items-center gap-2 text-xs font-mono text-teal-400 uppercase tracking-wider mb-2">
+          <div className="inline-flex items-center gap-2 text-xs font-mono text-red-400 uppercase tracking-wider mb-2">
             <Briefcase className="w-3.5 h-3.5" /> Career Journey
           </div>
           <h2 className="text-3xl sm:text-4xl font-extrabold text-white tracking-tight">

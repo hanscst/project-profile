@@ -25,8 +25,8 @@ export const Hero: React.FC = () => {
   return (
     <section id="hero" data-testid="hero" className="min-h-screen pt-32 pb-20 px-4 flex flex-col justify-center relative overflow-hidden">
       {/* Background ambient lighting */}
-      <div className="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-teal-500/10 rounded-full blur-3xl pointer-events-none -z-10"></div>
-      <div className="absolute top-1/3 left-1/4 w-[400px] h-[400px] bg-indigo-500/10 rounded-full blur-3xl pointer-events-none -z-10"></div>
+      <div className="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-red-500/25 rounded-full blur-3xl pointer-events-none -z-10"></div>
+      <div className="absolute top-1/3 left-1/4 w-[400px] h-[400px] bg-rose-500/20 rounded-full blur-3xl pointer-events-none -z-10"></div>
 
       <div className="max-w-6xl mx-auto w-full">
         <div className="grid grid-cols-1 lg:grid-cols-[1.5fr_1fr] gap-12 items-start">
@@ -41,14 +41,14 @@ export const Hero: React.FC = () => {
             {/* Headline */}
             <h1 className="text-4xl sm:text-5xl md:text-6xl font-extrabold tracking-tight text-white mb-4 leading-[1.1]">
               {name}
-              <span className="block mt-3 text-transparent bg-clip-text bg-gradient-to-r from-teal-400 via-emerald-300 to-cyan-400 text-2xl sm:text-3xl md:text-4xl font-bold">
+              <span className="block mt-3 text-transparent bg-clip-text bg-gradient-to-r from-red-400 via-rose-300 to-orange-400 text-2xl sm:text-3xl md:text-4xl font-bold">
                 {role}
               </span>
             </h1>
 
             {/* Experience + Tagline */}
             <p className="text-base sm:text-xl text-slate-300 max-w-2xl mb-10 leading-relaxed font-light">
-              <span className="text-teal-300 font-semibold">{experience}.</span> {tagline}
+              <span className="text-red-300 font-semibold">{experience}.</span> {tagline}
             </p>
 
             {/* CTA buttons */}
@@ -56,7 +56,7 @@ export const Hero: React.FC = () => {
               <a
                 href="#projects"
                 data-testid="hero-cta-projects"
-                className="px-6 py-3.5 rounded-xl bg-teal-500 hover:bg-teal-400 text-slate-950 font-bold text-sm flex items-center gap-2 shadow-lg shadow-teal-500/20 transition-all hover:gap-3"
+                className="px-6 py-3.5 rounded-xl bg-red-500 hover:bg-red-400 text-slate-950 font-bold text-sm flex items-center gap-2 shadow-lg shadow-red-500/20 transition-all hover:gap-3"
               >
                 View Projects <ArrowRight className="w-4 h-4" />
               </a>
@@ -77,9 +77,9 @@ export const Hero: React.FC = () => {
                   href={href}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center gap-2 px-4 py-2.5 rounded-xl glass hover:bg-slate-800/80 text-slate-300 font-medium text-sm transition-all border border-slate-700/60 hover:text-white hover:border-teal-500/40"
+                  className="inline-flex items-center gap-2 px-4 py-2.5 rounded-xl glass hover:bg-slate-800/80 text-slate-300 font-medium text-sm transition-all border border-slate-700/60 hover:text-white hover:border-red-500/40"
                 >
-                  <Icon className="w-4 h-4 text-teal-400" /> {label}
+                  <Icon className="w-4 h-4 text-red-400" /> {label}
                 </a>
               ))}
             </div>
@@ -88,7 +88,7 @@ export const Hero: React.FC = () => {
           {/* Right: location / contact card */}
           <div className="glass-card rounded-2xl p-6 sm:p-8">
             <div className="flex items-center gap-3 mb-6">
-              <div className="w-10 h-10 rounded-xl bg-teal-500/20 text-teal-400 flex items-center justify-center">
+              <div className="w-10 h-10 rounded-xl bg-red-500/20 text-red-400 flex items-center justify-center">
                 <MapPin className="w-5 h-5" />
               </div>
               <div>
@@ -98,11 +98,11 @@ export const Hero: React.FC = () => {
             </div>
 
             <div className="space-y-4 text-sm">
-              <a href={`mailto:${contact.email}`} className="flex items-center gap-3 text-slate-300 hover:text-teal-400 transition-colors">
-                <Mail className="w-4 h-4 text-teal-400" /> <span className="break-all">{contact.email}</span>
+              <a href={`mailto:${contact.email}`} className="flex items-center gap-3 text-slate-300 hover:text-red-400 transition-colors">
+                <Mail className="w-4 h-4 text-red-400" /> <span className="break-all">{contact.email}</span>
               </a>
-              <a href={`tel:${contact.phone.replace(/\s/g, '')}`} className="flex items-center gap-3 text-slate-300 hover:text-teal-400 transition-colors">
-                <Phone className="w-4 h-4 text-teal-400" /> <span>{contact.phone}</span>
+              <a href={`tel:${contact.phone.replace(/\s/g, '')}`} className="flex items-center gap-3 text-slate-300 hover:text-red-400 transition-colors">
+                <Phone className="w-4 h-4 text-red-400" /> <span>{contact.phone}</span>
               </a>
             </div>
           </div>
@@ -112,7 +112,7 @@ export const Hero: React.FC = () => {
         <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mt-16">
           <div className="glass-card rounded-2xl p-4 sm:p-5 transition-all">
             <div className="flex items-center gap-3 mb-2">
-              <div className="w-8 h-8 rounded-lg bg-teal-500/20 text-teal-400 flex items-center justify-center">
+              <div className="w-8 h-8 rounded-lg bg-red-500/20 text-red-400 flex items-center justify-center">
                 <Terminal className="w-4 h-4" />
               </div>
               <span className="text-2xl sm:text-3xl font-extrabold text-white">8+</span>
@@ -123,7 +123,7 @@ export const Hero: React.FC = () => {
 
           <div className="glass-card rounded-2xl p-4 sm:p-5 transition-all">
             <div className="flex items-center gap-3 mb-2">
-              <div className="w-8 h-8 rounded-lg bg-indigo-500/20 text-indigo-400 flex items-center justify-center">
+              <div className="w-8 h-8 rounded-lg bg-rose-500/20 text-rose-400 flex items-center justify-center">
                 <TrendingUp className="w-4 h-4" />
               </div>
               <span className="text-2xl sm:text-3xl font-extrabold text-white">30%</span>
@@ -134,7 +134,7 @@ export const Hero: React.FC = () => {
 
           <div className="glass-card rounded-2xl p-4 sm:p-5 transition-all">
             <div className="flex items-center gap-3 mb-2">
-              <div className="w-8 h-8 rounded-lg bg-cyan-500/20 text-cyan-400 flex items-center justify-center">
+              <div className="w-8 h-8 rounded-lg bg-orange-500/20 text-orange-400 flex items-center justify-center">
                 <Gauge className="w-4 h-4" />
               </div>
               <span className="text-2xl sm:text-3xl font-extrabold text-white">66%</span>
@@ -145,7 +145,7 @@ export const Hero: React.FC = () => {
 
           <div className="glass-card rounded-2xl p-4 sm:p-5 transition-all">
             <div className="flex items-center gap-3 mb-2">
-              <div className="w-8 h-8 rounded-lg bg-emerald-500/20 text-emerald-400 flex items-center justify-center">
+              <div className="w-8 h-8 rounded-lg bg-rose-500/20 text-rose-400 flex items-center justify-center">
                 <Zap className="w-4 h-4" />
               </div>
               <span className="text-2xl sm:text-3xl font-extrabold text-white">4x</span>
