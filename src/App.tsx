@@ -61,7 +61,7 @@ export const App: React.FC = () => {
   };
 
   return (
-    <div className="min-h-screen bg-slate-950 text-slate-100 flex flex-col selection:bg-red-500 selection:text-slate-950">
+    <div className="min-h-screen bg-slate-950 text-slate-100 flex flex-col selection:bg-yellow-500 selection:text-slate-950">
       <Navbar />
       <main className="flex-1">
         <Hero />

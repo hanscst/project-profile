@@ -2,12 +2,12 @@ import React from 'react';
 import type { ArchitectureFlow, ArchitectureNode, ArchitectureNodeType } from '../types/caseStudy';
 
 const TYPE_COLORS: Record<ArchitectureNodeType, { stroke: string; fill: string; text: string }> = {
-  client: { stroke: '#fb923c', fill: 'rgba(251,146,60,0.08)', text: '#fdba74' },
-  api: { stroke: '#fb7185', fill: 'rgba(251,113,133,0.08)', text: '#fda4af' },
-  service: { stroke: '#ef4444', fill: 'rgba(239,68,68,0.08)', text: '#fca5a5' },
+  client: { stroke: '#fbbf24', fill: 'rgba(251,191,36,0.08)', text: '#fcd34d' },
+  api: { stroke: '#facc15', fill: 'rgba(250,204,21,0.08)', text: '#fde047' },
+  service: { stroke: '#eab308', fill: 'rgba(234,179,8,0.10)', text: '#fef08a' },
   db: { stroke: '#f59e0b', fill: 'rgba(245,158,11,0.08)', text: '#fcd34d' },
-  external: { stroke: '#f43f5e', fill: 'rgba(244,63,94,0.08)', text: '#fda4af' },
-  queue: { stroke: '#fbbf24', fill: 'rgba(251,191,36,0.08)', text: '#fcd34d' },
+  external: { stroke: '#fb923c', fill: 'rgba(251,146,60,0.08)', text: '#fdba74' },
+  queue: { stroke: '#fde047', fill: 'rgba(253,224,71,0.10)', text: '#fef9c3' },
 };
 
 export const TYPE_LABELS: Record<ArchitectureNodeType, string> = {
@@ -62,7 +62,7 @@ export const ArchitectureDiagram: React.FC<ArchitectureDiagramProps> = ({ nodes,
       >
         <defs>
           <marker id="arrowhead" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
-            <polygon points="0 0, 10 3.5, 0 7" fill="#fca5a5" />
+            <polygon points="0 0, 10 3.5, 0 7" fill="#fde047" />
           </marker>
         </defs>
 
@@ -79,7 +79,7 @@ export const ArchitectureDiagram: React.FC<ArchitectureDiagramProps> = ({ nodes,
                 y1={from.y}
                 x2={to.x}
                 y2={to.y}
-                stroke="#ef4444"
+                stroke="#eab308"
                 strokeWidth="1.5"
                 strokeDasharray="5 4"
                 opacity="0.7"
@@ -90,7 +90,7 @@ export const ArchitectureDiagram: React.FC<ArchitectureDiagramProps> = ({ nodes,
                   x={mid.x}
                   y={mid.y - 7}
                   textAnchor="middle"
-                  fill="#fca5a5"
+                  fill="#fde047"
                   fontSize="11"
                   fontFamily="'JetBrains Mono', monospace"
                 >

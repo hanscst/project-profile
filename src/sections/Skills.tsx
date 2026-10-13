@@ -15,7 +15,7 @@ const slugify = (value: string): string =>
 
 /** Single source of truth for how each level renders (visual dots + text label). */
 const LEVEL_META: Record<SkillLevel, { label: string; dots: number; dotClass: string; textClass: string }> = {
-  expert: { label: 'Expert', dots: 3, dotClass: 'bg-red-400', textClass: 'text-red-300' },
+  expert: { label: 'Expert', dots: 3, dotClass: 'bg-yellow-400', textClass: 'text-yellow-300' },
   advanced: { label: 'Advanced', dots: 2, dotClass: 'bg-orange-300', textClass: 'text-orange-300' },
   proficient: { label: 'Proficient', dots: 1, dotClass: 'bg-slate-300', textClass: 'text-slate-300' },
 };
@@ -59,7 +59,7 @@ const TechRow: React.FC<TechRowProps> = ({ item, expanded, onToggle }) => {
         <span className="flex items-center gap-2 min-w-0">
           <ChevronDown
             className={`w-3.5 h-3.5 text-slate-500 shrink-0 transition-transform ${
-              expanded ? 'rotate-180 text-red-400' : ''
+              expanded ? 'rotate-180 text-yellow-400' : ''
             }`}
           />
           <span className="text-sm text-slate-200 font-medium truncate group-hover:text-white">
@@ -99,7 +99,7 @@ export const Skills: React.FC = () => {
     <section id="skills" data-testid="tech-stack-section" className="py-24 px-4 relative">
       <div className="max-w-6xl mx-auto">
         <div className="text-center mb-12">
-          <div className="inline-flex items-center gap-2 text-xs font-mono text-red-400 uppercase tracking-wider mb-2">
+          <div className="inline-flex items-center gap-2 text-xs font-mono text-yellow-400 uppercase tracking-wider mb-2">
             <Cpu className="w-3.5 h-3.5" /> Interactive Tech Stack Matrix
           </div>
           <h2 className="text-3xl sm:text-4xl font-extrabold text-white tracking-tight">
@@ -107,7 +107,7 @@ export const Skills: React.FC = () => {
           </h2>
           <p className="text-slate-400 text-sm sm:text-base mt-2 max-w-xl mx-auto">
             Tap any technology to see where and how I've used it. Data-driven — edit{' '}
-            <code className="text-red-300">src/data/techStack.ts</code> and this matrix updates automatically.
+            <code className="text-yellow-300">src/data/techStack.ts</code> and this matrix updates automatically.
           </p>
         </div>
 
@@ -140,7 +140,7 @@ export const Skills: React.FC = () => {
             <div key={category.id} className="glass-card rounded-2xl p-5">
               <h3 className="text-base font-bold text-white mb-3 pb-3 border-b border-slate-800 flex items-center justify-between">
                 <span>{category.label}</span>
-                <span className="text-xs font-mono text-red-400 bg-red-950/60 px-2 py-0.5 rounded border border-red-500/20">
+                <span className="text-xs font-mono text-yellow-400 bg-yellow-950/60 px-2 py-0.5 rounded border border-yellow-500/20">
                   {category.items.length}
                 </span>
               </h3>
