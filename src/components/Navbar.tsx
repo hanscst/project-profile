@@ -6,39 +6,39 @@ export const Navbar: React.FC = () => {
     <header data-testid="nav" className="fixed top-0 left-0 right-0 z-50 px-4 py-3">
       <div className="max-w-6xl mx-auto glass rounded-2xl px-5 py-3 flex items-center justify-between shadow-lg shadow-black/40">
         <a href="#hero" data-testid="nav-logo" className="flex items-center space-x-3 group">
-          <div className="w-9 h-9 rounded-xl bg-gradient-to-tr from-red-500 to-rose-400 flex items-center justify-center text-slate-950 font-bold text-lg shadow-md group-hover:scale-105 transition-transform">
+          <div className="w-9 h-9 rounded-xl bg-gradient-to-tr from-yellow-500 to-amber-400 flex items-center justify-center text-slate-950 font-bold text-lg shadow-md group-hover:scale-105 transition-transform">
             <Terminal className="w-5 h-5 text-slate-950" />
           </div>
           <div>
             <span className="font-bold text-slate-100 text-sm md:text-base tracking-tight block">Hans Christian</span>
-            <span className="text-xs text-red-400 font-mono">Software Engineer</span>
+            <span className="text-xs text-yellow-400 font-mono">Software Engineer</span>
           </div>
         </a>
 
         <nav className="hidden md:flex items-center space-x-6 text-sm text-slate-300 font-medium">
-          <a href="#projects" data-testid="nav-projects" className="hover:text-red-400 transition-colors flex items-center gap-1.5">
+          <a href="#projects" data-testid="nav-projects" className="hover:text-yellow-400 transition-colors flex items-center gap-1.5">
             <Code2 className="w-4 h-4" /> Projects
           </a>
-          <a href="#timeline" data-testid="nav-timeline" className="hover:text-red-400 transition-colors flex items-center gap-1.5">
+          <a href="#timeline" data-testid="nav-timeline" className="hover:text-yellow-400 transition-colors flex items-center gap-1.5">
             <Briefcase className="w-4 h-4" /> Experience
           </a>
-          <a href="#skills" data-testid="nav-skills" className="hover:text-red-400 transition-colors flex items-center gap-1.5">
+          <a href="#skills" data-testid="nav-skills" className="hover:text-yellow-400 transition-colors flex items-center gap-1.5">
             <Cpu className="w-4 h-4" /> Stack
           </a>
-          <a href="#contact" data-testid="nav-contact" className="hover:text-red-400 transition-colors flex items-center gap-1.5">
+          <a href="#contact" data-testid="nav-contact" className="hover:text-yellow-400 transition-colors flex items-center gap-1.5">
             <Mail className="w-4 h-4" /> Contact
           </a>
         </nav>
 
         <div className="flex items-center space-x-3">
-          <div className="hidden sm:inline-flex items-center gap-2 px-3 py-1 rounded-full text-xs font-mono bg-red-950/60 border border-red-500/30 text-red-300">
-            <span className="w-2 h-2 rounded-full bg-red-400 animate-pulse"></span>
+          <div className="hidden sm:inline-flex items-center gap-2 px-3 py-1 rounded-full text-xs font-mono bg-yellow-950/60 border border-yellow-500/30 text-yellow-300">
+            <span className="w-2 h-2 rounded-full bg-yellow-400 animate-pulse"></span>
             8+ YoE · Software Engineer
           </div>
           <a
             href="#contact"
             data-testid="nav-cta"
-            className="px-4 py-2 text-xs md:text-sm font-semibold rounded-xl bg-red-500 hover:bg-red-400 text-slate-950 transition-all shadow-md hover:shadow-red-500/20 active:scale-95"
+            className="px-4 py-2 text-xs md:text-sm font-semibold rounded-xl bg-yellow-500 hover:bg-yellow-400 text-slate-950 transition-all shadow-md hover:shadow-yellow-500/20 active:scale-95"
           >
             Get In Touch
           </a>
